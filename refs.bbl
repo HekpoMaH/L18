@@ -1,0 +1,30 @@
+\begin{thebibliography}{}
+
+\bibitem[Kaliszyk et~al., 2018]{RLTP}
+Kaliszyk, C., Urban, J., Michalewski, H., and Ols{\'{a}}k, M. (2018).
+\newblock Reinforcement learning of theorem proving.
+\newblock In {\em Advances in Neural Information Processing Systems 31: Annual
+  Conference on Neural Information Processing Systems 2018, NeurIPS 2018, 3-8
+  December 2018, Montr{\'{e}}al, Canada.}, pages 8836--8847.
+
+\bibitem[K{\"u}hlwein et~al., 2013]{Khlwein2013MaShML}
+K{\"u}hlwein, D., Blanchette, J.~C., Kaliszyk, C., and Urban, J. (2013).
+\newblock Ma{Sh}: {M}achine {L}earning for {S}ledgehammer.
+\newblock In {\em ITP}.
+
+\bibitem[Urban et~al., 2008]{MaLAReaSG}
+Urban, J., Sutcliffe, G., Pudl{\'a}k, P., and Vysko{\v{c}}il, J. (2008).
+\newblock Ma{LAR}ea {SG1} - machine learner for automated reasoning with
+  semantic guidance.
+\newblock In Armando, A., Baumgartner, P., and Dowek, G., editors, {\em
+  Automated Reasoning}, pages 441--456, Berlin, Heidelberg. Springer Berlin
+  Heidelberg.
+
+\bibitem[Urban et~al., 2011]{malecop}
+Urban, J., Vyskocil, J., and Step{\'{a}}nek, P. (2011).
+\newblock Ma{L}e{C}o{P} machine learning connection prover.
+\newblock In {\em Automated Reasoning with Analytic Tableaux and Related
+  Methods - 20th International Conference, {TABLEAUX} 2011, Bern, Switzerland,
+  July 4-8, 2011. Proceedings}, pages 263--277.
+
+\end{thebibliography}

@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: refs.aux
+The style file: apalike.bst
+Database file #1: refs.bib.bib
+A bad cross reference---entry "RLTP"
+refers to entry "DBLP:conf/nips/2018", which doesn't exist
+A bad cross reference---entry "malecop"
+refers to entry "DBLP:conf/tableaux/2011", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/nips/2018"
+Warning--I didn't find a database entry for "DBLP:conf/tableaux/2011"
+You've used 4 entries,
+            1935 wiz_defined-function locations,
+            504 strings with 4852 characters,
+and the built_in function-call counts, 2226 in all, are:
+= -- 220
+> -- 98
+< -- 3
++ -- 33
+- -- 33
+* -- 169
+:= -- 352
+add.period$ -- 13
+call.type$ -- 4
+change.case$ -- 35
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 101
+empty$ -- 160
+format.name$ -- 37
+if$ -- 472
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 14
+pop$ -- 50
+preamble$ -- 1
+purify$ -- 35
+quote$ -- 0
+skip$ -- 75
+stack$ -- 0
+substring$ -- 152
+swap$ -- 33
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 24
+warning$ -- 0
+while$ -- 18
+width$ -- 0
+write$ -- 55
+(There were 2 error messages)

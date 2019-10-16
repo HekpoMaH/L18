@@ -1,0 +1,190 @@
+\begin{thebibliography}{}
+
+\bibitem[Alama et~al., 2014]{PremiseSelection}
+Alama, J., Heskes, T., K{\"{u}}hlwein, D., Tsivtsivadze, E., and Urban, J.
+  (2014).
+\newblock Premise selection for mathematics by corpus analysis and kernel
+  methods.
+\newblock {\em J. Autom. Reasoning}, 52(2):191--213.
+
+\bibitem[Aspinall, 2000]{ProofGeneral}
+Aspinall, D. (2000).
+\newblock {Proof General}: {A} generic tool for proof development.
+\newblock In {\em Tools and Algorithms for Construction and Analysis of
+  Systems, 6th International Conference, {TACAS} 2000, Held as Part of the
+  European Joint Conferences on the Theory and Practice of Software, {ETAPS}
+  2000, Berlin, Germany, March 25 - April 2, 2000, Proceedings}, pages 38--42.
+
+\bibitem[Blanchette et~al., 2016]{LearnBasedFactSelIsabel}
+Blanchette, J.~C., Greenaway, D., Kaliszyk, C., K{\"{u}}hlwein, D., and Urban,
+  J. (2016).
+\newblock A learning-based fact selector for {I}sabelle/{HOL}.
+\newblock {\em J. Autom. Reasoning}, 57(3):219--244.
+
+\bibitem[Carlsonn et~al., 1999]{SNoW}
+Carlsonn, A.~J., Cumby, C.~M., Rosen, J.~L., and Roth, D. (1999).
+\newblock {SN}o{W} user guide.
+\newblock Technical report, University of Illinois.
+
+\bibitem[Denzinger et~al., 1997]{HighPerfATPAI}
+Denzinger, J., Fuchs, M., and Fuchs, M. (1997).
+\newblock High performance atp systems by combining several ai methods.
+\newblock In {\em Proceedings of the 15th International Joint Conference on
+  Artifical Intelligence - Volume 1}, IJCAI'97, pages 102--107, San Francisco,
+  CA, USA. Morgan Kaufmann Publishers Inc.
+
+\bibitem[Denzinger and Schulz, 1996]{DomKnThmProv}
+Denzinger, J. and Schulz, S. (1996).
+\newblock Learning domain knowledge to improve theorem proving.
+\newblock In {\em Automated Deduction - CADE-13, 13th International Conference
+  on Automated Deduction, New Brunswick, NJ, USA, July 30 - August 3, 1996,
+  Proceedings}, pages 62--76.
+
+\bibitem[Duncan, 2007]{DataMiningAFT}
+Duncan, H. (2007).
+\newblock {\em The use of data-mining for the automatic formation of tactics}.
+\newblock PhD thesis, University of Edinburgh, {UK}.
+
+\bibitem[Fuchs, 1995]{FuchsGenetic}
+Fuchs, M. (1995).
+\newblock Learning proof heuristics by adaptive parameters.
+\newblock In {\em Machine Learning, Proceedings of the Twelfth International
+  Conference on Machine Learning, Tahoe City, California, USA, July 9-12,
+  1995}, pages 235--243.
+
+\bibitem[Fuchs, 1998]{FeatureBasedThmP}
+Fuchs, M. (1998).
+\newblock A feature-based learning method for theorem proving.
+\newblock In {\em Proceedings of the Fifteenth National/Tenth Conference on
+  Artificial Intelligence/Innovative Applications of Artificial Intelligence},
+  AAAI '98/IAAI '98, pages 457--462, Menlo Park, CA, USA. American Association
+  for Artificial Intelligence.
+
+\bibitem[Irving et~al., 2016]{DeepMath}
+Irving, G., Szegedy, C., Alemi, A.~A., E{\'{e}}n, N., Chollet, F., and Urban,
+  J. (2016).
+\newblock Deep{M}ath - deep sequence models for premise selection.
+\newblock In {\em Advances in Neural Information Processing Systems 29: Annual
+  Conference on Neural Information Processing Systems 2016, December 5-10,
+  2016, Barcelona, Spain}, pages 2235--2243.
+
+\bibitem[Kaliszyk et~al., 2017]{Holstep}
+Kaliszyk, C., Chollet, F., and Szegedy, C. (2017).
+\newblock Holstep: {A} machine learning dataset for higher-order logic theorem
+  proving.
+\newblock In {\em 5th International Conference on Learning Representations,
+  {ICLR} 2017, Toulon, France, April 24-26, 2017, Conference Track
+  Proceedings}.
+
+\bibitem[Kaliszyk and Urban, 2013]{Mizar40}
+Kaliszyk, C. and Urban, J. (2013).
+\newblock Mizar 40 for mizar 40.
+\newblock {\em CoRR}, abs/1310.2805.
+
+\bibitem[Kaliszyk and Urban, 2014]{Flyspeck}
+Kaliszyk, C. and Urban, J. (2014).
+\newblock Learning-assisted automated reasoning with {F}lyspeck.
+\newblock {\em J. Autom. Reasoning}, 53(2):173--213.
+
+\bibitem[Kaliszyk and Urban, 2015]{femalecop}
+Kaliszyk, C. and Urban, J. (2015).
+\newblock {FEM}a{L}e{C}o{P}: Fairly efficient machine learning connection
+  prover.
+\newblock In {\em Logic for Programming, Artificial Intelligence, and Reasoning
+  - 20th International Conference, {LPAR-20} 2015, Suva, Fiji, November 24-28,
+  2015, Proceedings}, pages 88--96.
+
+\bibitem[Kaliszyk et~al., 2018]{RLTP}
+Kaliszyk, C., Urban, J., Michalewski, H., and Ols{\'{a}}k, M. (2018).
+\newblock Reinforcement learning of theorem proving.
+\newblock In {\em Advances in Neural Information Processing Systems 31: Annual
+  Conference on Neural Information Processing Systems 2018, NeurIPS 2018, 3-8
+  December 2018, Montr{\'{e}}al, Canada.}, pages 8836--8847.
+
+\bibitem[Kaliszyk et~al., 2014]{MaLARea04}
+Kaliszyk, C., Urban, J., and Vyskocil, J. (2014).
+\newblock Machine learner for automated reasoning 0.4 and 0.5.
+\newblock In {\em 4th Workshop on Practical Aspects of Automated Reasoning,
+  PAAR@IJCAR 2014, Vienna, Austria, 2014}, pages 60--66.
+
+\bibitem[Komendantskaya et~al., 2012]{MLProofGeneral}
+Komendantskaya, E., Heras, J., and Grov, G. (2012).
+\newblock Machine learning in {Proof General}: Interfacing interfaces.
+\newblock In {\em Proceedings 10th International Workshop On User Interfaces
+  for Theorem Provers, {UITP} 2012, Bremen, Germany, July 11th, 2012.}, pages
+  15--41.
+
+\bibitem[K{\"u}hlwein et~al., 2013]{Khlwein2013MaShML}
+K{\"u}hlwein, D., Blanchette, J.~C., Kaliszyk, C., and Urban, J. (2013).
+\newblock Ma{Sh}: {M}achine {L}earning for {S}ledgehammer.
+\newblock In {\em ITP}.
+
+\bibitem[K{\"{u}}hlwein et~al., 2012]{OverviewEvalPremiseSel}
+K{\"{u}}hlwein, D., van Laarhoven, T., Tsivtsivadze, E., Urban, J., and Heskes,
+  T. (2012).
+\newblock Overview and evaluation of premise selection techniques for large
+  theory mathematics.
+\newblock In {\em Automated Reasoning - 6th International Joint Conference,
+  {IJCAR} 2012, Manchester, UK, June 26-29, 2012. Proceedings}, pages 378--392.
+
+\bibitem[Loos et~al., 2017]{DNGPS}
+Loos, S.~M., Irving, G., Szegedy, C., and Kaliszyk, C. (2017).
+\newblock Deep network guided proof search.
+\newblock In {\em LPAR-21, 21st International Conference on Logic for
+  Programming, Artificial Intelligence and Reasoning, Maun, Botswana, May 7-12,
+  2017}, pages 85--105.
+
+\bibitem[Meng and Paulson, 2009]{LightweightPaulson}
+Meng, J. and Paulson, L.~C. (2009).
+\newblock Lightweight relevance filtering for machine-generated resolution
+  problems.
+\newblock {\em J. Applied Logic}, 7(1):41--57.
+
+\bibitem[Rockt{\"{a}}schel and Riedel, 2017]{EndToEndDiffProving}
+Rockt{\"{a}}schel, T. and Riedel, S. (2017).
+\newblock End-to-end differentiable proving.
+\newblock In {\em Advances in Neural Information Processing Systems 30: Annual
+  Conference on Neural Information Processing Systems 2017, 4-9 December 2017,
+  Long Beach, CA, {USA}}, pages 3788--3800.
+
+\bibitem[Sutcliffe and Puzis, 2007]{SRASS}
+Sutcliffe, G. and Puzis, Y. (2007).
+\newblock {SRASS} - {A} semantic relevance axiom selection system.
+\newblock In {\em Automated Deduction - CADE-21, 21st International Conference
+  on Automated Deduction, Bremen, Germany, July 17-20, 2007, Proceedings},
+  pages 295--310.
+
+\bibitem[Urban, 2004]{MizarProofAdvisor}
+Urban, J. (2004).
+\newblock {MPTP} - motivation, implementation, first experiments.
+\newblock {\em J. Autom. Reasoning}, 33(3-4):319--339.
+
+\bibitem[Urban, 2006]{MizarMode}
+Urban, J. (2006).
+\newblock {MizarMode} - an integrated proof assistance tool for the mizar way
+  of formalizing mathematics.
+\newblock {\em J. Applied Logic}, 4(4):414--427.
+
+\bibitem[Urban, 2007]{MaLARea}
+Urban, J. (2007).
+\newblock Ma{LAR}ea: a metasystem for automated reasoning in large theories.
+\newblock In {\em Proceedings of the {CADE-21} Workshop on Empirically
+  Successful Automated Reasoning in Large Theories, Bremen, Germany, 17th July
+  2007}.
+
+\bibitem[Urban et~al., 2008]{MaLAReaSG}
+Urban, J., Sutcliffe, G., Pudl{\'a}k, P., and Vysko{\v{c}}il, J. (2008).
+\newblock Ma{LAR}ea {SG1} - machine learner for automated reasoning with
+  semantic guidance.
+\newblock In Armando, A., Baumgartner, P., and Dowek, G., editors, {\em
+  Automated Reasoning}, pages 441--456, Berlin, Heidelberg. Springer Berlin
+  Heidelberg.
+
+\bibitem[Urban et~al., 2011]{malecop}
+Urban, J., Vyskocil, J., and Step{\'{a}}nek, P. (2011).
+\newblock Ma{L}e{C}o{P} machine learning connection prover.
+\newblock In {\em Automated Reasoning with Analytic Tableaux and Related
+  Methods - 20th International Conference, {TABLEAUX} 2011, Bern, Switzerland,
+  July 4-8, 2011. Proceedings}, pages 263--277.
+
+\end{thebibliography}

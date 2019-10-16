@@ -1,0 +1,27 @@
+NON-AITP
+*MaLARea: a Metasystem for Automated Reasoning in Large Theories. (emphasis that intended use is on large theories)
+    follow up: Malarea sg1-machine learner for automated reasoning with semantic guidance
+*MaSh: machine learning for sledgehammer - sledgehammer part of the Isabelle/HOL - several papers there
+DeepMath-deep sequence models for premise selection
+MaLeS: A framework for automatic tuning of automated theorem provers
+
+AITP
+2016
+SATzilla: Portfolio-based Algorithm Selection for SAT
+* Machine learning for first-order theorem proving: learning to select a good heuristic
+Premise selection for mathematics by corpus analysis and kernel methods
+
+2017
+* Logic tensor networks - interesting from an NN architectural perspective (we need so called real logic)
+
+2018
+Hammer for Coq: Automation for Dependent Type Theory - not in detail, just interesting that Coq has hammer too
+Safe Reinforcement Learning via Formal Methods - ??
+Learning to Prove with Tactics - seems like an interesting improvement
+Reinforcement Learning of Theorem Proving - 26 cites, reinforcment, seems fancy
+
+2019
+Curriculum Learning and Theorem Proving
+Can Neural Networks Learn Symbolic Rewriting?
+Machine learning for instance selection in SMT solving
+First Experiments with Data Driven Conjecturing

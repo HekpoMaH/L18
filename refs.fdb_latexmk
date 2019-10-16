@@ -1,0 +1,31 @@
+# Fdb version 3
+["bibtex refs"] 1571255801 "refs.aux" "refs.bbl" "refs" 1571255801
+  "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1480098433 24635 604dafcc79f521a11ea73e506e1fbd98 ""
+  "refs.aux" 1571241642 366 cf0d2ab1addf1ba3079b5712304e81bb ""
+  "refs.bcf" 0 -1 0 ""
+  "refs.bib" 1571255799 19399 129baf7e1c67997fc0bda1a2da2d89fa ""
+  (generated)
+  "refs.blg"
+  "refs.bbl"
+["pdflatex"] 1571241642 "refs.tex" "refs.pdf" "refs" 1571255801
+  "/etc/texmf/web2c/texmf.cnf" 1548091285 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1480098701 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1480098701 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1480098701 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1480098733 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1480098733 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1480098733 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1480098821 19821 310da678527a7dfe2a02c88af38079b7 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1480098821 8292 e897c12e1e886ce77fe26afc5d470886 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1548091467 164837 f472f40ab643c6b1fa7fff8b04d446df ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1548091468 812560 571077f2fc4d1b7289443e6dceecb71e ""
+  "refs.aux" 1571241642 366 cf0d2ab1addf1ba3079b5712304e81bb ""
+  "refs.bbl" 1571255177 1366 044cee36ddd65e3020165e2554659f63 "bibtex refs"
+  "refs.tex" 1571221884 291 498b680257bf4d73b9d7ade23c9dd6c9 ""
+  (generated)
+  "refs.log"
+  "refs.aux"
+  "refs.pdf"

@@ -1,0 +1,139 @@
+\documentclass{article}
+
+\usepackage{natbib}
+\begin{document}
+
+\nocite{SRASS}
+\nocite{LightweightPaulson}
+\nocite{Khlwein2013MaShML}
+\nocite{SNoW}
+\nocite{MizarMode}
+\nocite{DataMiningAFT}
+\nocite{MaLARea}
+\nocite{MaLARea04}
+\nocite{DeepMath}
+\nocite{FlyspeckFW}
+\nocite{ProofGeneral}
+\nocite{MLProofGeneral}
+\nocite{MaLAReaSG}
+\nocite{RLTP}
+\nocite{PremiseSelection}
+\nocite{DNGPS}
+\nocite{malecop}
+\nocite{femalecop}
+\nocite{Holstep}
+\nocite{EndToEndDiffProving}
+\nocite{FeatureBasedThmP}
+\nocite{OverviewEvalPremiseSel}
+\nocite{LearnBasedFactSelIsabel}
+\nocite{Flyspeck}
+\nocite{Mizar40}
+
+\cite{FuchsGenetic} -- heuristic learned to be chosen with Gen Algo
+
+\cite{DomKnThmProv} -- inference control heuristics for equational deduction.
+Data from prev proofs, select equations that are likely to be used in new
+situations. 1st eval fn works by symbolic retrieval of generalized patterns
+from a kkn base, 2nd eval fn compiles the knowledge into abstract term
+evaluation trees. \textbf{Analyzed proof protocols} by representing knowledge
+about protocols'n'proofs 
+
+\cite{HighPerfATPAI} -- case-based reasoning, similarity concept, cooperation
+concept, reactive planning; still `learn' from previous successful proof
+attempts'
+
+\cite{FeatureBasedThmP} -- Learn search-guiding heuristics by employing
+features in a simple, yet effective manner. Features used to adapts a heuristic
+to a solved problem. Utilize heuristic profitably for related target problems.
+\textbf{Prediction of usefulness of a fact.} 
+
+SNoW \cite{SNoW} -- learning program that can be used as a general purpose
+mulit-class classifier and is specifically tailored for large number of
+features. Sparse Network of Winnows (not a typo). Sparse network of sparse
+linear functions over a pre-defined or incrementally acquired feature space.
+Several update rules may be used -- sparse variations of the Winnow update
+rule, the Perceptron or Naive Bayes. Multi class learner. Decisions either
+binary or continuous (confidence in [0, 1]).
+
+Proof General \cite{ProofGeneral} -- tool for developing proofs with ITP.
+Interaction based around proof script (seq of commands sent to ITP). Provides
+UI.
+
+Mizar proof advisor \cite{MizarProofAdvisor} -- MPTP (Mizar Problems for
+Theorem Proving) is system described; translates MML into FOL for ATPs and for
+generating thm proving problems corresponding to Mizar Mathematical Library.
+Mizar proof advisor used for selecting suitable axioms from the large library
+for an arbirtrary problem. Feature based ML framework, symbols are the features
+that characterise formulas. They had 40k targets and about 7k features.
+\textbf{SNoW} learning architecture used mainly (NLP archit, designed for large
+num of feat and targets).
+
+MizarMode \cite{MizarMode} -- Emacs authoring environment. Code-generating
+Code-Browsing Code-searching methods. Auto gen proof skeletons, semantic
+browsing of articles, structured viewing, proof advice using \textbf{machinee
+learning tools} like Mizar Proof Advisor. 
+
+Lightweight relevance filtering ... \cite{LightweightPaulson} -- relevance
+filtering methods, based on counting fn symbols in clauses. Signature based
+relevance filter. Not exactly ML?...
+
+The use of Data-Mining... \cite{DataMiningAFT} -- evaluate the applicability of
+data-mining techniques for tactics from large corpuses of proofs. Data mine
+information to find occuring patterns. Patterns are then evolved into tactics.
+Variable Length Markov Models used to predict next proof step.
+
+MaLARea \cite{MaLARea} -- simple metasystem iteratively combining deductive
+Automated Reasoning tools (now the E and the SPASS ATP systems) with a machine
+learning component (now the SNoW system used in the  naive  Bayesian  learning
+mode). Intended use -- large theories, i.e. large num of problems which in
+a consistent fashion use many axioms, lemmas, thms, etc. The system works in
+cycles of thm proving followed by ML from successful proofs, using the learned
+information to prune the set of available axioms for the next cycle. MPTP
+challenge - 142/252. Learning could be stated as creating an assoc of some
+features of the conjecture with proving methods. Features -- just symbols
+appearing in them. "Proving method" -- ordering of all av axioms. Goal -- given
+symbols, produces ordering of axioms, according to expected relevancy wrt the
+set of symbols. Sufficiently simple to implement and quite efficient in the
+first experiments with thm proving over Mizar library. Deduce, learn, loop
+implemented via growing axiom set and growing timelimit policy. First try to
+solve cheaply (min num axioms / most relevant, lowest timelimit). On success,
+learning performed on the newly available solution and axiom/time limit dropped
+to min values. No success -- increase limits. Details in paper. MLMLMLMLML SNoW
+used in NB mode, bcs of speed. One training example contains all the symbols of
+a solved conjecture w/ names of axioms needed. A bayes network is trained.
+Easier to just relearn every time. Trained classifier is used to prune the
+axiom set for the next runs -- we take all the unsolved conjectures and create
+a testing example from each by taking all its symbols. The classifier run on
+this printing (ordered) axioms. This is then used to select req num of axioms.
+Usage of previous results exists.
+
+SRASS \cite{SRASS} -- selection determined by semantics of the axioms and
+conjecture, heuristically ordered by a syntactic relevance measure. Many
+problems more solved. At each iter the process looks for a model of selected
+axioms and the neg of the conjecture. If no model found, then the conjecture is
+consequence. Otherwise, then an unselected axiom that is false in the model is
+moved to the set of selected axioms. Newly selected axiom excludes the model
+from the models of the selected axioms and neg conj, eventually leading to
+a situation where there are no models of the selected axioms and the negated
+conjecture. Unselected axioms selected in decreasing order of usefuleness.
+Syntactic relevance score for usefulness. Direct relevance is ratio of how many
+predicates and/or functors the have in common to how many they have overall.
+Contextual direct relevance uses `contextual intersection'.
+
+MaLARea SG \cite{MaLAReaSG} -- combines model-based and learning based methods
+for automated reasoning in large theories. The implementation is based on
+MaLARea. Extended by taking into account semantic relevance of axioms, similar
+to SRASS. Combined system outperforms both. Three extensions to selection of
+axioms. 1. check for countersatisfiability in runs where this is probable.
+Allows for countersatisfiability precheck to detect more cases when more axioms
+need to be added. 2. Use models found when a problem is found to be
+countersatisfiable, as an additional criterion for computing axiom relevance.
+Need to efficiently evaluate formulae in the models. 3. Extend axiom
+specification using a logical criterion: the set of axioms should exclude as
+many known models of the negated conjecture as possible. \textbf{Weird
+combination. Review!}
+
+\bibliographystyle{apalike}
+\bibliography{refs.bib}
+
+\end{document}
