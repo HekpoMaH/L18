@@ -1,11 +1,11 @@
 \begin{thebibliography}{}
 
-\bibitem[Alama et~al., 2014]{PremiseSelection}
-Alama, J., Heskes, T., K{\"{u}}hlwein, D., Tsivtsivadze, E., and Urban, J.
-  (2014).
+\bibitem[Alama et~al., 2011]{PremiseSelection}
+Alama, J., K{\"{u}}hlwein, D., Tsivtsivadze, E., Urban, J., and Heskes, T.
+  (2011).
 \newblock Premise selection for mathematics by corpus analysis and kernel
   methods.
-\newblock {\em J. Autom. Reasoning}, 52(2):191--213.
+\newblock {\em CoRR}, abs/1108.3446.
 
 \bibitem[Aspinall, 2000]{ProofGeneral}
 Aspinall, D. (2000).
@@ -76,23 +76,30 @@ Kaliszyk, C., Chollet, F., and Szegedy, C. (2017).
   {ICLR} 2017, Toulon, France, April 24-26, 2017, Conference Track
   Proceedings}.
 
-\bibitem[Kaliszyk and Urban, 2013]{Mizar40}
+\bibitem[Kaliszyk and Urban, 2013]{FlyspeckFeatW}
 Kaliszyk, C. and Urban, J. (2013).
-\newblock Mizar 40 for mizar 40.
-\newblock {\em CoRR}, abs/1310.2805.
+\newblock Stronger automation for {Flyspeck} by feature weighting and strategy
+  evolution.
+\newblock In {\em Third International Workshop on Proof Exchange for Theorem
+  Proving, PxTP 2013, Lake Placid, NY, USA, June 9-10, 2013}, pages 87--95.
 
 \bibitem[Kaliszyk and Urban, 2014]{Flyspeck}
 Kaliszyk, C. and Urban, J. (2014).
 \newblock Learning-assisted automated reasoning with {F}lyspeck.
 \newblock {\em J. Autom. Reasoning}, 53(2):173--213.
 
-\bibitem[Kaliszyk and Urban, 2015]{femalecop}
-Kaliszyk, C. and Urban, J. (2015).
+\bibitem[Kaliszyk and Urban, 2015a]{femalecop}
+Kaliszyk, C. and Urban, J. (2015a).
 \newblock {FEM}a{L}e{C}o{P}: Fairly efficient machine learning connection
   prover.
 \newblock In {\em Logic for Programming, Artificial Intelligence, and Reasoning
   - 20th International Conference, {LPAR-20} 2015, Suva, Fiji, November 24-28,
   2015, Proceedings}, pages 88--96.
+
+\bibitem[Kaliszyk and Urban, 2015b]{Mizar40}
+Kaliszyk, C. and Urban, J. (2015b).
+\newblock Mizar 40 for mizar 40.
+\newblock {\em J. Autom. Reasoning}, 55(3):245--256.
 
 \bibitem[Kaliszyk et~al., 2018]{RLTP}
 Kaliszyk, C., Urban, J., Michalewski, H., and Ols{\'{a}}k, M. (2018).
@@ -114,7 +121,7 @@ Komendantskaya, E., Heras, J., and Grov, G. (2012).
   for Theorem Provers, {UITP} 2012, Bremen, Germany, July 11th, 2012.}, pages
   15--41.
 
-\bibitem[K{\"u}hlwein et~al., 2013]{Khlwein2013MaShML}
+\bibitem[K{\"u}hlwein et~al., 2013]{MaSh}
 K{\"u}hlwein, D., Blanchette, J.~C., Kaliszyk, C., and Urban, J. (2013).
 \newblock Ma{Sh}: {M}achine {L}earning for {S}ledgehammer.
 \newblock In {\em ITP}.

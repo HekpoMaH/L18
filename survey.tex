@@ -5,14 +5,14 @@
 
 \nocite{SRASS}
 \nocite{LightweightPaulson}
-\nocite{Khlwein2013MaShML}
+\nocite{MaSh}
 \nocite{SNoW}
 \nocite{MizarMode}
 \nocite{DataMiningAFT}
 \nocite{MaLARea}
 \nocite{MaLARea04}
 \nocite{DeepMath}
-\nocite{FlyspeckFW}
+\nocite{FlyspeckFeatW}
 \nocite{ProofGeneral}
 \nocite{MLProofGeneral}
 \nocite{MaLAReaSG}
@@ -132,6 +132,132 @@ Need to efficiently evaluate formulae in the models. 3. Extend axiom
 specification using a logical criterion: the set of axioms should exclude as
 many known models of the negated conjecture as possible. \textbf{Weird
 combination. Review!}
+
+MaLeCoP \cite{malecop} -- TABLEAU CALCULUS YAY!!! While in MaLARea
+learning-based axiom selection is done outside unmodified theorem provers, in
+MaLeCoP the learning-based selection is done inside the prover, and the
+interaction between learning of knowledge and its application can be much
+finer. The general design that we propose is as follows (see also Figure 1):
+The theorem prover (P) should have a sufficiently fast communication channel to
+a general advisor (A) that accepts queries (proof state descriptions) and
+training data (characterization of the proof state together with solutions
+and failures) from the prover, processes them, and replies to the prover
+(advising, e.g., which clauses to choose). The advisor A also talks to external
+system(s) (E). A translates the queries and information produced by P to the
+formalism used by a particular E, and translates E’s guidance back to the
+formalism used by P. At suitable time, A also hands over the (suitably
+transformed) training data to E, so that E can update its knowledge of the
+world on which its advice is based. A is free to spawn/query as many
+instances/versions of Es as necessary, and A is responsible for managing the
+guidance provided by them. Particular instances of Es that we have in mind are
+learning systems, however we believe that the tableau setting is also suitable
+for linking of SMT solvers, computer algebra systems, and all kinds of other AI
+systems, probably in a more straightforward way than for the resolution-based
+systems. SNoW again...
+
+Premise selection .. and kernel methods \cite{PremiseSelection} -- This  work
+develops  learning-based  premise  selection  in  two  ways.  First,a  newly
+available  minimal dependency  analysis  of  existing  high-level  formal
+mathematical proofs is used to build a large knowledge base of proof
+dependencies,  providing  precise  data  for  ATP-based  re-verification  and
+for  training premise selection algorithms.  Second, a new machine learning
+algorithm for premise selection based on kernel methods is proposed and
+implemented (Section 4 gives details) 0/1 features if sth appears in
+conjecture. Looking for a classifier fn which, given a conjecture c, estimates
+how useful p is for proving c. (still the aproach with chosing the best some
+premises) Maths explained nicely.
+
+Flyspeck \cite{Flyspeck} -- Trained on Flyspeck proofs. (HOL Light is an ITP)
+The procedure implemented for HOLLight is currently a combination of the
+external, internal, learning, and non-learning premise selection approaches.
+This procedure assumes the common ITP situations of a large library of (also
+definitional) theorems $T_i$ and their proofs $P_i$ (for definitions the proof
+is empty). The proofs refer to other theorems giving rise to a partial ordering
+of thms etended into their total chrono order. Procedure:
+\begin{enumerate}
+    \item characterisations of thms and proofs are extracted in a simple format
+    \item dependency data are obtained by running ATPs on the ATP problems created from the hollight deps, i.e. tms are re-proved. Preferred (it is smaller) data. Exported as 1
+    \item external premise selectors preprocess the thm characterizations and the proof deps. Multiple characterizations and proof dependencies may be used
+    \item when an new conjecture is stated in hollight its characterization is extracted and sent to the pretrained first stage premise selectors.
+    \item the first stage premise selectors work as rankers. For a given conjecture characterization they produce a ranking of the available theorems (premises) according to their (assumed) relevance for the conjecture.
+    \item The best ranked premises are used inside hollight to produce atp problems. Several thresholds on num of included premises are used, resulting in multiple versions of the ATP problems.
+    \item The ATPs are called on the problems. Some of the best ATPs run in a strategy-scheduling mode combining multiple strategies. Some of the strategies always use the SInE (i.e. local, second stage) premise selection (with different parameters) and some other strategies may to use SINE when the ATP problem is sufficiently large.
+\end{enumerate}
+\textbf{ML of Premise Selection}\\
+All the currently used first-stage premise selectors are machine learning
+algorithms trained in various ways on previous proofs. A number of machine
+learning algorithms can be experimented with today, and in particular
+kernel-based methods and ensemble methods have recently shown quite good
+performance on smaller datasets such as MPTP2078. Scaling hard on large corpus.
+So far this work uses mostly sparse implementation of a multiclass NB
+classifier (SNoW again...). Several other fast incremental learning algorithms
+were briefly tried -- perceptron and winnow algos (SNoW) and custom k-NN. Only
+k-NN produced enough additional prediction power. 
+
+At a given point during the library development, the training data available to
+the machine learners are the proofs of the previously proved theorems in the
+library. A frequently used approach to training premise selection is to
+characterize each proof $P_i$ of theorem $T_i$ as a (multi)set of theorems
+\{$T_{i_1}, ... T_{i_m}|T_{i_j} used in P_i$\} The training example will
+consist of the input characterization (features) of $T_i$ (features) and the
+output characterization of $T_i$ (labels) will be the multi set \{$T_i$\} and
+the previous set. Such training examples can be tuned in various ways. For
+example the output theorems may be further recursively expanded with their own
+dependencies,the input features could be expanded with the features of their
+definitions, various weighting schemes and similarity clusterings can be tried,
+etc. This is also mostly left to future general research in premise-selection
+learning. Once the machine learner is trained on a particular development state
+of the library, it is tested on the next theorem T in the chronological order.
+The input features are extracted from T and given to the trained learner which
+then answers with a ranking of the available theorems. This ranking is given to
+HOL Light, which uses it to produce ATP problems for T with varied numbers of
+the best-ranked premise
+
+Stronger automation for Flyspeck... \cite{FlyspeckFeatW} -- 2 complementary AI
+methods used to improve strength of ai/atp service. First, several schemes for
+frequency-based feature weighting are explored in combination with
+distance-weighted k-nearest-neighbor classifier. A smaller improvement is
+obtained by evolving targeted E prover strategies on two particular premise
+selections, using the Blind Strategymaker (BliStr) system. (FOR THE PREVIOUS)
+custom implementation of the k-nearest neighbor (k-NN) machine-learning method,
+which computes for a new example (conjecture) the k nearest (in a given feature
+distance) previous examples and ranks premises by their frequency in these
+examples. (\\END) The  simplest  way  how  to  measure  the  similarity  of
+formulas  to  the  new  conjecture  is  to compute the overlap of their
+(sparse) feature vectors. Neglected  by  our  first  implementation  is
+however  the  sensitivity  of k-NN  to  feature  frequencies. Inverse Document
+Fequency weighting. 
+
+MaSh \cite{MaSh} -- Sledgehammer had relevance filter (syntactic similarity).
+Mash learns from succsessful proofs. Integrates easily. \emph{Draws on recent
+research in the context of Mizar and HOL Light.} CUSTOM version of a weighted
+sparse naiveB algo, that is faster than the NB in SNoW. Maintains persistent
+state and supports incremental, nonmonotonic updates.  The main technical
+difficulty is to perform the learning in a fast and robust way without
+interfering with other activities of the proof assistant. Power users can
+enhance the learning by letting external provers run for hours on libraries,
+searching for simpler proofs. A particularly strong filter, MeSh, is obtained
+by combining MePo (MEPO is paulsons thingie which selects based on num of
+relevant symbols) and MaSh. Implementations refines this in several ways --
+chained facts take absolutie priority, local facts are preferred to gloobal,
+first order facts preferred to hol ones; rare symbols are weighted more
+heavily; etc. Mepo tents to perform best on that contain some rare symbols,
+otherwise it discriminates poorly. There is also issue of starvation: the
+filter with its iterative expansion of the set of relevant symbols effectively
+performs a best first search and may ignore some relevant facts close to the
+root. Provers given ranked selected facts. Time limit and number of facts vary
+(the classic setting). Once a proof is found, Sledgehammer miinimizes it by
+invoking the prover repeatedly with subsets of the facts it refers to. 
+\\\textbf{The ML engine}\\
+Default algorithm NB adapted to fact selection. Manipulates thm proving
+concepts in an abstract way. Handcrafted features. Sources of proofs -- all
+facts in theories. Most interesting lemmas, those written by man. (see paper
+for math details)
+
+MaLARea04 \cite{MaLARea04} -- seems like nothing new...
+
+
+
 
 \bibliographystyle{apalike}
 \bibliography{refs.bib}

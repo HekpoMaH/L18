@@ -11,6 +11,8 @@ A bad cross reference---entry "MaLARea04"
 refers to entry "DBLP:conf/cade/2014paar", which doesn't exist
 A bad cross reference---entry "DeepMath"
 refers to entry "DBLP:conf/nips/2016", which doesn't exist
+A bad cross reference---entry "FlyspeckFeatW"
+refers to entry "DBLP:conf/cade/2013pxtp", which doesn't exist
 A bad cross reference---entry "ProofGeneral"
 refers to entry "DBLP:conf/tacas/2000", which doesn't exist
 A bad cross reference---entry "MLProofGeneral"
@@ -33,7 +35,6 @@ A bad cross reference---entry "FuchsGenetic"
 refers to entry "DBLP:conf/icml/1995", which doesn't exist
 A bad cross reference---entry "DomKnThmProv"
 refers to entry "DBLP:conf/cade/1996", which doesn't exist
-Warning--I didn't find a database entry for "FlyspeckFW"
 Warning--I didn't find a database entry for "DBLP:conf/cade/2007esarlt"
 Warning--I didn't find a database entry for "DBLP:conf/nips/2018"
 Warning--I didn't find a database entry for "DBLP:conf/lpar/2017"
@@ -45,49 +46,50 @@ Warning--I didn't find a database entry for "DBLP:conf/cade/2014paar"
 Warning--I didn't find a database entry for "DBLP:conf/nips/2016"
 Warning--I didn't find a database entry for "DBLP:conf/tacas/2000"
 Warning--I didn't find a database entry for "DBLP:journals/corr/KaliszykL13"
+Warning--I didn't find a database entry for "DBLP:conf/cade/2013pxtp"
 Warning--I didn't find a database entry for "DBLP:conf/cade/1996"
 Warning--I didn't find a database entry for "DBLP:conf/icml/1995"
 Warning--I didn't find a database entry for "DBLP:conf/iclr/2017"
 Warning--I didn't find a database entry for "DBLP:conf/cade/2007"
-You've used 28 entries,
+You've used 29 entries,
             1935 wiz_defined-function locations,
-            690 strings with 10933 characters,
-and the built_in function-call counts, 13235 in all, are:
-= -- 1350
-> -- 473
-< -- 30
-+ -- 163
-- -- 157
-* -- 1003
-:= -- 2109
-add.period$ -- 87
-call.type$ -- 28
-change.case$ -- 217
+            695 strings with 11159 characters,
+and the built_in function-call counts, 13719 in all, are:
+= -- 1401
+> -- 486
+< -- 32
++ -- 168
+- -- 161
+* -- 1036
+:= -- 2181
+add.period$ -- 90
+call.type$ -- 29
+change.case$ -- 224
 chr.to.int$ -- 28
-cite$ -- 28
-duplicate$ -- 600
-empty$ -- 986
-format.name$ -- 199
-if$ -- 2777
-int.to.chr$ -- 1
+cite$ -- 29
+duplicate$ -- 625
+empty$ -- 1025
+format.name$ -- 206
+if$ -- 2884
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 26
-newline$ -- 143
-num.names$ -- 86
-pop$ -- 256
+missing$ -- 27
+newline$ -- 148
+num.names$ -- 89
+pop$ -- 266
 preamble$ -- 1
-purify$ -- 217
+purify$ -- 224
 quote$ -- 0
-skip$ -- 456
+skip$ -- 474
 stack$ -- 0
-substring$ -- 977
-swap$ -- 165
-text.length$ -- 16
+substring$ -- 1013
+swap$ -- 173
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 168
+type$ -- 174
 warning$ -- 0
-while$ -- 117
+while$ -- 122
 width$ -- 0
-write$ -- 371
-(There were 15 error messages)
+write$ -- 384
+(There were 16 error messages)
