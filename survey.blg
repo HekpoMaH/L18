@@ -3,6 +3,8 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: survey.aux
 The style file: apalike.bst
 Database file #1: refs.bib.bib
+A bad cross reference---entry "MonteCarloTableau"
+refers to entry "DBLP:conf/cade/2017", which doesn't exist
 A bad cross reference---entry "SRASS"
 refers to entry "DBLP:conf/cade/2007", which doesn't exist
 A bad cross reference---entry "MaLARea"
@@ -51,45 +53,46 @@ Warning--I didn't find a database entry for "DBLP:conf/cade/1996"
 Warning--I didn't find a database entry for "DBLP:conf/icml/1995"
 Warning--I didn't find a database entry for "DBLP:conf/iclr/2017"
 Warning--I didn't find a database entry for "DBLP:conf/cade/2007"
-You've used 29 entries,
+Warning--I didn't find a database entry for "DBLP:conf/cade/2017"
+You've used 31 entries,
             1935 wiz_defined-function locations,
-            695 strings with 11159 characters,
-and the built_in function-call counts, 13719 in all, are:
-= -- 1401
-> -- 486
-< -- 32
-+ -- 168
-- -- 161
-* -- 1036
-:= -- 2181
-add.period$ -- 90
-call.type$ -- 29
-change.case$ -- 224
-chr.to.int$ -- 28
-cite$ -- 29
-duplicate$ -- 625
-empty$ -- 1025
-format.name$ -- 206
-if$ -- 2884
+            711 strings with 11790 characters,
+and the built_in function-call counts, 15004 in all, are:
+= -- 1526
+> -- 550
+< -- 34
++ -- 189
+- -- 182
+* -- 1137
+:= -- 2380
+add.period$ -- 97
+call.type$ -- 31
+change.case$ -- 241
+chr.to.int$ -- 30
+cite$ -- 31
+duplicate$ -- 681
+empty$ -- 1115
+format.name$ -- 229
+if$ -- 3161
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 27
-newline$ -- 148
-num.names$ -- 89
-pop$ -- 266
+missing$ -- 29
+newline$ -- 158
+num.names$ -- 97
+pop$ -- 290
 preamble$ -- 1
-purify$ -- 224
+purify$ -- 241
 quote$ -- 0
-skip$ -- 474
+skip$ -- 519
 stack$ -- 0
-substring$ -- 1013
-swap$ -- 173
-text.length$ -- 17
+substring$ -- 1109
+swap$ -- 195
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 174
+type$ -- 186
 warning$ -- 0
-while$ -- 122
+while$ -- 133
 width$ -- 0
-write$ -- 384
-(There were 16 error messages)
+write$ -- 411
+(There were 17 error messages)

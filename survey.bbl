@@ -45,6 +45,13 @@ Duncan, H. (2007).
 \newblock {\em The use of data-mining for the automatic formation of tactics}.
 \newblock PhD thesis, University of Edinburgh, {UK}.
 
+\bibitem[F{\"{a}}rber et~al., 2017]{MonteCarloTableau}
+F{\"{a}}rber, M., Kaliszyk, C., and Urban, J. (2017).
+\newblock Monte carlo tableau proof search.
+\newblock In {\em Automated Deduction - {CADE} 26 - 26th International
+  Conference on Automated Deduction, Gothenburg, Sweden, August 6-11, 2017,
+  Proceedings}, pages 563--579.
+
 \bibitem[Fuchs, 1995]{FuchsGenetic}
 Fuchs, M. (1995).
 \newblock Learning proof heuristics by adaptive parameters.
@@ -193,5 +200,12 @@ Urban, J., Vyskocil, J., and Step{\'{a}}nek, P. (2011).
 \newblock In {\em Automated Reasoning with Analytic Tableaux and Related
   Methods - 20th International Conference, {TABLEAUX} 2011, Bern, Switzerland,
   July 4-8, 2011. Proceedings}, pages 263--277.
+
+\bibitem[Wang et~al., 2017]{DeepGraph}
+Wang, M., Tang, Y., Wang, J., and Deng, J. (2017).
+\newblock Premise selection for theorem proving by deep graph embedding.
+\newblock In Guyon, I., Luxburg, U.~V., Bengio, S., Wallach, H., Fergus, R.,
+  Vishwanathan, S., and Garnett, R., editors, {\em Advances in Neural
+  Information Processing Systems 30}, pages 2786--2796. Curran Associates, Inc.
 
 \end{thebibliography}

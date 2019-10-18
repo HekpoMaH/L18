@@ -3,7 +3,9 @@
 \usepackage{natbib}
 \begin{document}
 
+\nocite{MonteCarloTableau}
 \nocite{SRASS}
+\nocite{DeepGraph}
 \nocite{LightweightPaulson}
 \nocite{MaSh}
 \nocite{SNoW}
@@ -327,6 +329,51 @@ structure similarity within the axiom or conjecture being embedded.  However,
 many of the symbols occurring in a formula are defined by formulas earlier in
 the corpus, and we can use the axiom-embeddings of those symbols to improve
 model performance.
+
+HOLstep \cite{Holstep} -- In this paper, we introduce a new dataset based on
+Higher-Order Logic (HOL) proofs, for the purpose of developing new machine
+learning-based theorem-proving strategies. Reasons for hol given in paper and
+how dataset is extracted. Several possible tasks are outlined.
+
+End-to-End differentiable proving \cite{EndToEndDiffProving} -- doesn't fit in
+the picture (nice paper otherwise)
+
+Reinforcement Learning of Theorem Proving \cite{RLTP} -- Thm proving algo that
+uses practically no domain heuristics for guiding its connection-style proof
+search. Instead, it runs many Monte-Carlo simulations guided by reinforcement
+learning from previous proof attempts. We produce several versions of the
+prover, parameterized by different learning and guiding algorithms. In this work, we remove this requirement, since it basically means that all shorter proof candidates have to be tried before a longer proof is found.
+
+\textbf{bare prover} Our bare prover is based on a previous reimplementation
+[23] of leanCoP in OCaml (mlCoP).Unlike the Prolog version,mlCoP uses an
+explicit stack for storing the full proof state (used for the ML part).  We
+first modify mlCoP by removing iterative deepening, i.e., the traversal
+strategy that makes sure that shorter (shallower) tableaux are  tested  before
+deeper  ones.   Instead,  the  bare  prover  randomly  chooses  extension  and
+reduction steps operating on the current goal, possibly going into arbitrary
+depth. Next, we add playouts and search node visit counts. A play out of length
+d is simply a sequence of d consecutive extension/reduction steps (inferences)
+from a given proof state(a tableau with a selected goal). Inferences  thus
+correspond  to actions and  are  similar  to  moves  in  games.   We  represent
+inferences as integers that encode the selected clause together with the
+literal that connected to the goal.  Instead of running one potentially
+infinite playout, the bare prover can be instructed to play n playouts of
+length d. Each playout updates the counts for the search nodes that it visits.
+Search nodes are encoded as sequences of inferences starting at the empty
+tableau. A playout can also run without length restrictions until it visits
+a previously unexplored search node. The  next  modification  to  this  simple
+setup  are bigsteps done  after b playouts.   They  correspond to moves that
+are chosen in games after many playouts.  Similarly, instead of starting all
+playouts always from scratch (empty tableau) as above, we choose after the
+first b playouts a particular single inference  (bigstep),  resulting  in
+a  new bigstep  tableau.   The  next b playouts  will  start  with  this
+tableau, followed by another bigstep, etc.
+
+\textbf{rlcop} extends the bare prover with (i) Monte-Carlo tree search balancing exploration and exploitation using the UCT formula. To implement Monte-Carlo tree search, we maintain at each search node i the number of its visits $n_i$, the total reward $w_i$, and its prior probability $p_i$. This is the transition probability of the action (inference) that leads from i's parent node to i. If no policy learning is used, the prior probabilities are all equal to one. The total reward for a node is computed as a sum of the rewards of all nodes below that node. In the basic setting, the reward for a leaf node is 1 if the sequence of inference s results in a closed tableau, i.e., a proof of the conjecture. Otherwise it is 0. (actually is slightly different -- see paper)
+
+Great paper, but need to review some RL for presentation.
+
+
 
 \bibliographystyle{apalike}
 \bibliography{refs.bib}
