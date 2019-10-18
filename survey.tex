@@ -212,17 +212,18 @@ The input features are extracted from T and given to the trained learner which
 then answers with a ranking of the available theorems. This ranking is given to
 HOL Light, which uses it to produce ATP problems for T with varied numbers of
 the best-ranked premise
+(FOR THE PREVIOUS)
+custom implementation of the k-nearest neighbor (k-NN) machine-learning method,
+which computes for a new example (conjecture) the k nearest (in a given feature
+distance) previous examples and ranks premises by their frequency in these
+examples. (\\END)
 
 Stronger automation for Flyspeck... \cite{FlyspeckFeatW} -- 2 complementary AI
 methods used to improve strength of ai/atp service. First, several schemes for
 frequency-based feature weighting are explored in combination with
 distance-weighted k-nearest-neighbor classifier. A smaller improvement is
 obtained by evolving targeted E prover strategies on two particular premise
-selections, using the Blind Strategymaker (BliStr) system. (FOR THE PREVIOUS)
-custom implementation of the k-nearest neighbor (k-NN) machine-learning method,
-which computes for a new example (conjecture) the k nearest (in a given feature
-distance) previous examples and ranks premises by their frequency in these
-examples. (\\END) The  simplest  way  how  to  measure  the  similarity  of
+selections, using the Blind Strategymaker (BliStr) system.  The  simplest  way  how  to  measure  the  similarity  of
 formulas  to  the  new  conjecture  is  to compute the overlap of their
 (sparse) feature vectors. Neglected  by  our  first  implementation  is
 however  the  sensitivity  of k-NN  to  feature  frequencies. Inverse Document
@@ -256,8 +257,76 @@ for math details)
 
 MaLARea04 \cite{MaLARea04} -- seems like nothing new...
 
+FEMaLeCoP (great names btw) \cite{femalecop} -- FEMaLeCoP is a connection
+tableau theorem prover based on leanCoP which uses efficient implementation of
+internal learning-based guidance for extension steps. Despite the fact that
+exhaustive use of such internal guidance can incur a significant slowdown of
+the raw inferencing process, FEMaLeCoP trained on related proofs can prove many
+problems that cannot be solved by leanCoP. Femalecop is the first ai/atp system
+convincingly demonstrating that guiding the internal inference algorithms of
+theorem provers by knowledge learned from previous proofs can significantly
+improve the performance of the provers.  In the MaLeCoP(Machine Learning
+Connection Prover) experiment we have shown that in principle it is possible to
+significantly prune the internal search space of leanCoP. In this work, we
+devise much stronger learning-based guidance for connection tableau by
+developing an AI/ATP system where the learning-based guidance is an optimized
+and tightly integrated part of the core inferencing algorithm and data
+structures. The basis of FEMaLeCoP is the OCaml version of leanCoP. We advise
+the selection of clause for every tableau extension step. (see paper) We use
+a fast custom OCaml implementation of the naive Bayes algorithm that learns the
+association of the features of the proof states (see below) with the
+contrapositives that were used for the successful tableau extension steps in
+previous proofs. We characterize the proof state as a weighted vector of
+symbols and/or (possibly generalized) terms extracted from all the literals on
+the active path. (see details) An optional problem-specific data-filtering step
+is to use the k-nearest neighbor (k-NN) algorithm for further restriction of
+the relevant training data. If this is used, we first find the k solved
+problems whose conjectures are (in the feature metric) closest to the current
+conjecture, and extract the training examples only from such problems.
+(INTEGRATED LIKE AN INTERNAL SYSTEM)
 
+Mizar40 \cite{Mizar40} -- 40\% of thms solved in the MML. To achieve that,
+a large suite of AI/ATP methods is employed and further developed. We implement
+the most useful methods efficiently, to scale them to the 150000 formulas in
+MML. The main body of our work thusconsists of the following steps: (DETAILS IN
+PAPER...).  Nothing really interesting or 'grand'
 
+A learning based fact selector... \cite{LearnBasedFactSelIsabel} -- MaSh
+reintroduction...
+
+DeepMath \cite{DeepMath} --  "We propose a two stage approach for this task
+that yields good results for the premise selection task on the Mizar corpus
+while avoiding the hand-engineered features of existing state-of-the-art
+models. To our knowledge, this is the first time deep learning has been applied
+to theorem proving on a large scale." 4 main contributions: 1) demonstration
+for the first time that neural network models are useful for aiding in large
+scale automated logical reasoning without the need for hand-engineered features
+2) Comparison of various network architectures 3) A method of semantic-aware
+“definition”-embeddings for function symbols that improves the generalization
+of formulas with symbols occurring infrequently 4) Analysis showing that neural
+network based premise selection methods are complementary to those with
+hand-engineered features. Motivation from NLP (see paper)\\
+OverviewOfApproach\\
+Pairwise relevance -- predicting the probability that a given axiom is useful
+for proving a given conjecture. The conjecture and axiom sequences are
+separately embedded into fixed length real vectors, then concatenated and
+passed to a third network with 2 fully connected layers and logistic loss.
+During training time, the two embedding networks and the joined predictor path
+are trained jointly. As discussed in section 3, we train our models on premise
+selection data generated by a combination of various methods, including
+k-nearest-neighbor search on hand-engineered similarity metrics. We start with
+a first stage of character-level models, and then build second and later stages
+of word-level models on top of the results of earlier stages.
+
+Character level models -- We begin by avoiding special purpose engineering by
+treating formulas on the character-level using an 80 dimensional one-hot
+encoding of the character sequence. These sequences are passed to a weight
+shared network for variable length input. (see paper)
+Word-level models -- The character-level models are limited to word and
+structure similarity within the axiom or conjecture being embedded.  However,
+many of the symbols occurring in a formula are defined by formulas earlier in
+the corpus, and we can use the axiom-embeddings of those symbols to improve
+model performance.
 
 \bibliographystyle{apalike}
 \bibliography{refs.bib}
