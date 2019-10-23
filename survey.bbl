@@ -15,16 +15,34 @@ Aspinall, D. (2000).
   European Joint Conferences on the Theory and Practice of Software, {ETAPS}
   2000, Berlin, Germany, March 25 - April 2, 2000, Proceedings}, pages 38--42.
 
+\bibitem[Bansal et~al., 2019]{HOList}
+Bansal, K., Loos, S.~M., Rabe, M.~N., Szegedy, C., and Wilcox, S. (2019).
+\newblock Holist: An environment for machine learning of higher order logic
+  theorem proving.
+\newblock In {\em Proceedings of the 36th International Conference on Machine
+  Learning, {ICML} 2019, 9-15 June 2019, Long Beach, California, {USA}}, pages
+  454--463.
+
 \bibitem[Blanchette et~al., 2016]{LearnBasedFactSelIsabel}
 Blanchette, J.~C., Greenaway, D., Kaliszyk, C., K{\"{u}}hlwein, D., and Urban,
   J. (2016).
 \newblock A learning-based fact selector for {I}sabelle/{HOL}.
 \newblock {\em J. Autom. Reasoning}, 57(3):219--244.
 
+\bibitem[Bridge et~al., 2014]{Bridge2014}
+Bridge, J.~P., Holden, S.~B., and Paulson, L.~C. (2014).
+\newblock Machine learning for first-order theorem proving.
+\newblock {\em Journal of Automated Reasoning}, 53(2):141--172.
+
 \bibitem[Carlsonn et~al., 1999]{SNoW}
 Carlsonn, A.~J., Cumby, C.~M., Rosen, J.~L., and Roth, D. (1999).
 \newblock {SN}o{W} user guide.
 \newblock Technical report, University of Illinois.
+
+\bibitem[Davis et~al., 1962]{DPLL}
+Davis, M., Logemann, G., and Loveland, D. (1962).
+\newblock A machine program for theorem-proving.
+\newblock {\em Commun. ACM}, 5(7):394--397.
 
 \bibitem[Denzinger et~al., 1997]{HighPerfATPAI}
 Denzinger, J., Fuchs, M., and Fuchs, M. (1997).
@@ -45,13 +63,6 @@ Duncan, H. (2007).
 \newblock {\em The use of data-mining for the automatic formation of tactics}.
 \newblock PhD thesis, University of Edinburgh, {UK}.
 
-\bibitem[F{\"{a}}rber et~al., 2017]{MonteCarloTableau}
-F{\"{a}}rber, M., Kaliszyk, C., and Urban, J. (2017).
-\newblock Monte carlo tableau proof search.
-\newblock In {\em Automated Deduction - {CADE} 26 - 26th International
-  Conference on Automated Deduction, Gothenburg, Sweden, August 6-11, 2017,
-  Proceedings}, pages 563--579.
-
 \bibitem[Fuchs, 1995]{FuchsGenetic}
 Fuchs, M. (1995).
 \newblock Learning proof heuristics by adaptive parameters.
@@ -67,18 +78,56 @@ Fuchs, M. (1998).
   AAAI '98/IAAI '98, pages 457--462, Menlo Park, CA, USA. American Association
   for Artificial Intelligence.
 
+\bibitem[Gauthier et~al., 2017]{TacticToe}
+Gauthier, T., Kaliszyk, C., and Urban, J. (2017).
+\newblock Tactictoe: Learning to reason with {HOL4} tactics.
+\newblock In {\em LPAR-21, 21st International Conference on Logic for
+  Programming, Artificial Intelligence and Reasoning, Maun, Botswana, May 7-12,
+  2017}, pages 125--143.
+
+\bibitem[Gauthier et~al., 2018]{LearningToProveTactics}
+Gauthier, T., Kaliszyk, C., Urban, J., Kumar, R., and Norrish, M. (2018).
+\newblock Learning to prove with tactics.
+\newblock {\em CoRR}, abs/1804.00596.
+
+\bibitem[Gransden et~al., 2015]{SEPIA}
+Gransden, T., Walkinshaw, N., and Raman, R. (2015).
+\newblock {SEPIA:} search for proofs using inferred automata.
+\newblock In {\em Automated Deduction - {CADE-25} - 25th International
+  Conference on Automated Deduction, Berlin, Germany, August 1-7, 2015,
+  Proceedings}, pages 246--255.
+
+\bibitem[Hales, 2006]{FlyspeckProject}
+Hales, T.~C. (2006).
+\newblock Introduction to the flyspeck project.
+\newblock In Coquand, T., Lombardi, H., and Roy, M.-F., editors, {\em
+  Mathematics, Algorithms, Proofs}, number 05021 in Dagstuhl Seminar
+  Proceedings, Dagstuhl, Germany. Internationales Begegnungs- und
+  Forschungszentrum f{\"u}r Informatik (IBFI), Schloss Dagstuhl, Germany.
+
+\bibitem[Harrison et~al., 2014]{HistoryITP}
+Harrison, J., Urban, J., and Wiedijk, F. (2014).
+\newblock History of interactive theorem proving.
+\newblock In {\em Computational Logic}, pages 135--214.
+
+\bibitem[Huang et~al., 2019]{GamePad}
+Huang, D., Dhariwal, P., Song, D., and Sutskever, I. (2019).
+\newblock Gamepad: {A} learning environment for theorem proving.
+\newblock In {\em 7th International Conference on Learning Representations,
+  {ICLR} 2019, New Orleans, LA, USA, May 6-9, 2019}.
+
 \bibitem[Irving et~al., 2016]{DeepMath}
-Irving, G., Szegedy, C., Alemi, A.~A., E{\'{e}}n, N., Chollet, F., and Urban,
+Irving, G., Alemi, A.~A., Szegedy, C., E{\'{e}}n, N., Chollet, F., and Urban,
   J. (2016).
 \newblock Deep{M}ath - deep sequence models for premise selection.
 \newblock In {\em Advances in Neural Information Processing Systems 29: Annual
   Conference on Neural Information Processing Systems 2016, December 5-10,
   2016, Barcelona, Spain}, pages 2235--2243.
 
-\bibitem[Kaliszyk et~al., 2017]{Holstep}
+\bibitem[Kaliszyk et~al., 2017]{HolStep}
 Kaliszyk, C., Chollet, F., and Szegedy, C. (2017).
-\newblock Holstep: {A} machine learning dataset for higher-order logic theorem
-  proving.
+\newblock {HolStep}: {A} machine learning dataset for higher-order logic
+  theorem proving.
 \newblock In {\em 5th International Conference on Learning Representations,
   {ICLR} 2017, Toulon, France, April 24-26, 2017, Conference Track
   Proceedings}.
@@ -121,32 +170,10 @@ Kaliszyk, C., Urban, J., and Vyskocil, J. (2014).
 \newblock In {\em 4th Workshop on Practical Aspects of Automated Reasoning,
   PAAR@IJCAR 2014, Vienna, Austria, 2014}, pages 60--66.
 
-\bibitem[Komendantskaya et~al., 2012]{MLProofGeneral}
-Komendantskaya, E., Heras, J., and Grov, G. (2012).
-\newblock Machine learning in {Proof General}: Interfacing interfaces.
-\newblock In {\em Proceedings 10th International Workshop On User Interfaces
-  for Theorem Provers, {UITP} 2012, Bremen, Germany, July 11th, 2012.}, pages
-  15--41.
-
 \bibitem[K{\"u}hlwein et~al., 2013]{MaSh}
 K{\"u}hlwein, D., Blanchette, J.~C., Kaliszyk, C., and Urban, J. (2013).
 \newblock Ma{Sh}: {M}achine {L}earning for {S}ledgehammer.
 \newblock In {\em ITP}.
-
-\bibitem[K{\"{u}}hlwein et~al., 2012]{OverviewEvalPremiseSel}
-K{\"{u}}hlwein, D., van Laarhoven, T., Tsivtsivadze, E., Urban, J., and Heskes,
-  T. (2012).
-\newblock Overview and evaluation of premise selection techniques for large
-  theory mathematics.
-\newblock In {\em Automated Reasoning - 6th International Joint Conference,
-  {IJCAR} 2012, Manchester, UK, June 26-29, 2012. Proceedings}, pages 378--392.
-
-\bibitem[Loos et~al., 2017]{DNGPS}
-Loos, S.~M., Irving, G., Szegedy, C., and Kaliszyk, C. (2017).
-\newblock Deep network guided proof search.
-\newblock In {\em LPAR-21, 21st International Conference on Logic for
-  Programming, Artificial Intelligence and Reasoning, Maun, Botswana, May 7-12,
-  2017}, pages 85--105.
 
 \bibitem[Meng and Paulson, 2009]{LightweightPaulson}
 Meng, J. and Paulson, L.~C. (2009).
@@ -154,12 +181,34 @@ Meng, J. and Paulson, L.~C. (2009).
   problems.
 \newblock {\em J. Applied Logic}, 7(1):41--57.
 
+\bibitem[Naumowicz and Kornilowicz, 2009]{MizarOverview}
+Naumowicz, A. and Kornilowicz, A. (2009).
+\newblock A brief overview of mizar.
+\newblock In {\em Theorem Proving in Higher Order Logics, 22nd International
+  Conference, TPHOLs 2009, Munich, Germany, August 17-20, 2009. Proceedings},
+  pages 67--72.
+
+\bibitem[Paliwal et~al., 2019]{GNNsForTP}
+Paliwal, A., Loos, S.~M., Rabe, M.~N., Bansal, K., and Szegedy, C. (2019).
+\newblock Graph representations for higher-order logic and theorem proving.
+\newblock {\em CoRR}, abs/1905.10006.
+
+\bibitem[Riazanov and Voronkov, 2002]{VAMPIRE}
+Riazanov, A. and Voronkov, A. (2002).
+\newblock The design and implementation of {VAMPIRE}.
+\newblock {\em {AI} Commun.}, 15(2-3):91--110.
+
 \bibitem[Rockt{\"{a}}schel and Riedel, 2017]{EndToEndDiffProving}
 Rockt{\"{a}}schel, T. and Riedel, S. (2017).
 \newblock End-to-end differentiable proving.
 \newblock In {\em Advances in Neural Information Processing Systems 30: Annual
   Conference on Neural Information Processing Systems 2017, 4-9 December 2017,
   Long Beach, CA, {USA}}, pages 3788--3800.
+
+\bibitem[Schulz, 2002]{Eprover}
+Schulz, S. (2002).
+\newblock E - a brainiac theorem prover.
+\newblock {\em {AI} Commun.}, 15(2-3):111--126.
 
 \bibitem[Sutcliffe and Puzis, 2007]{SRASS}
 Sutcliffe, G. and Puzis, Y. (2007).
@@ -204,8 +253,15 @@ Urban, J., Vyskocil, J., and Step{\'{a}}nek, P. (2011).
 \bibitem[Wang et~al., 2017]{DeepGraph}
 Wang, M., Tang, Y., Wang, J., and Deng, J. (2017).
 \newblock Premise selection for theorem proving by deep graph embedding.
-\newblock In Guyon, I., Luxburg, U.~V., Bengio, S., Wallach, H., Fergus, R.,
-  Vishwanathan, S., and Garnett, R., editors, {\em Advances in Neural
-  Information Processing Systems 30}, pages 2786--2796. Curran Associates, Inc.
+\newblock In {\em Advances in Neural Information Processing Systems 30: Annual
+  Conference on Neural Information Processing Systems 2017, 4-9 December 2017,
+  Long Beach, CA, {USA}}, pages 2786--2796.
+
+\bibitem[Yang and Deng, 2019]{LearningToProveITP}
+Yang, K. and Deng, J. (2019).
+\newblock Learning to prove theorems via interacting with proof assistants.
+\newblock In {\em Proceedings of the 36th International Conference on Machine
+  Learning, {ICML} 2019, 9-15 June 2019, Long Beach, California, {USA}}, pages
+  6984--6994.
 
 \end{thebibliography}

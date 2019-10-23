@@ -1,35 +1,166 @@
 \documentclass{article}
 
 \usepackage{natbib}
+
+\title{Machine Learning for Theorem Proving}
+\author{Dobrik Georgiev, dgg30}
+
+
 \begin{document}
 
-\nocite{MonteCarloTableau}
-\nocite{SRASS}
-\nocite{DeepGraph}
-\nocite{LightweightPaulson}
-\nocite{MaSh}
-\nocite{SNoW}
-\nocite{MizarMode}
-\nocite{DataMiningAFT}
-\nocite{MaLARea}
-\nocite{MaLARea04}
-\nocite{DeepMath}
-\nocite{FlyspeckFeatW}
-\nocite{ProofGeneral}
-\nocite{MLProofGeneral}
-\nocite{MaLAReaSG}
-\nocite{RLTP}
-\nocite{PremiseSelection}
-\nocite{DNGPS}
-\nocite{malecop}
-\nocite{femalecop}
-\nocite{Holstep}
-\nocite{EndToEndDiffProving}
-\nocite{FeatureBasedThmP}
-\nocite{OverviewEvalPremiseSel}
-\nocite{LearnBasedFactSelIsabel}
-\nocite{Flyspeck}
-\nocite{Mizar40}
+\maketitle
+
+\section{Introduction}
+
+Machine Learning (ML) has found its application in many areas (natural language
+processing, computer vision, etc) and it has succeeded in solving challenging
+tasks where classical deterministic approaches have performed poorly.
+
+This survey focuses some of the ML techniques that have been applied for
+Theorem Proving. It is organised in three main parts. First I give a bit of
+background on theorem proving (both automated and interactive). Then the focus
+falls on how ML is used in Interactive Theorem Proving and premise selection in
+particular. The last part will focus on Automated Theorem Proving and how ML
+can be used to guide Automated Theorem Provers and improve their performance.
+A conclusion summarises the three parts, where also the current situation is
+analysed.
+
+\nocite{LearningToProveITP}
+
+
+\subsection{Background}
+
+Automated Theorem Provers (ATP) usually work by trying to prove a conjecture
+using techniques similar to an algorithm. Many approaches exist -- resolution
+with unification, tableaux, DPLL \citep{DPLL}, etc. Since these approaches can
+take exponential time to check a formula, various heuristic (even some ML ones)
+have been developed. Such provers, however, have been unable to make use of
+high-level abstractions and reasoning that humans usually do, when developing
+a complex proof or theory.
+
+Proving complicated theorems in higher-order logic in a `one click' manner has
+turned out difficult to achieve and automate. Thus, a human factor has been
+integrated in the process of theorem proving and Interactive Theorem Provers
+(ITP) emerged \citep{HistoryITP}. In interactive theorem proving, users specify
+high-level definitions and proofs using a sequence of so-called
+\textit{tactics}\footnote{In an analogy to classic programming, these can be
+viewed as the instructions.}. Low level details are then translated to ATP formalisms and handed
+to an automated theorem prover, such as E \citep{Eprover}, VAMPIRE
+\citep{VAMPIRE} or similar. As programming languages, ITPs also have
+``libraries'' (called ``theories'' or ``theory sets''), which contain various
+proofs, which can be imported and reused.
+
+\section{ML for Interactive Theorem Proving and\\ Premise Selection}
+
+One of the problems when handling the proof of a conjecture to a lower-level
+ATP arises when there are a lot of premises and facts (called \emph{axioms} in
+theorem proving terminology), but very few of them are actually used in the
+proof of the conjecture. Consequently, the ATP may attempt to use the
+irrelevant facts which can in turn slow down the proving process or even lead
+to a timeout\footnote{As proving a conjecture can be NP-complete in some
+logics, most ATPs are run only for a fixed amount of time.}. This occurs
+especially when a user is using a large theory or a set of several theories.
+Ideally, we would want to pick \emph{only} those facts that are most relevant
+to what we want to prove.
+
+Some of the first experiments were preformed when translating
+Mizar\footnote{Mizar is an assistant which mechanically checks proofs written
+by humans. See \cite{MizarOverview} for an overview.} Mathematical Library,
+which consisted of many formalised mathematical theories, to first-order logic
+\citep{MizarProofAdvisor}. In an attempt to automatically select useful axioms
+when proving theorems the Mizar Proof Advisor (MPA) was created. In the
+implementation of MPA the symbols used in a proof of a theorem $T$ were used as
+features and those were associated with the relevant proofs and facts used for
+proving $T$. A naive Bayes was used for evaluating whether an axiom would be
+useful for proving $T$. 
+
+Building on the Mizar Proof Advisor, MaLARea \citep{MaLARea} was created using
+the same idea as in \cite{MizarProofAdvisor} that features of a conjecture can
+be associated with proofs which were successfully used when these features are
+present. The goal of MaLARea is again to give a ranking of the axioms according
+to their usefulness. What distinguishes this system from the above, is that it
+implements \emph{deduce, learn from it, and loop} policy \citep[p.~3]{MaLARea}.
+The policy's main loop consists of attempting to prove a set of problems (using
+an ATP) with no more than a fixed number of axioms which were selected by
+a Bayes classifier and under a fixed time limit. If nothing new is proven, the
+axiom and time limits are increased. Upon a successful proof, they are reset to
+their minimal values again and the proof is `learned'. It was shown that with
+learning a `relevance filter', the number of problems that can be solved with
+an ATP has increased drastically (cf. Section 3 of \cite{MaLARea}) compared to
+passing all premises to the ATP.
+
+The policy outlined above has been reused in the future as well, signifying the
+contribution of \cite{MaLARea}. Two of the examples follow:
+\begin{itemize}
+    \item \textbf{MaLARea SG} \cite{MaLAReaSG} -- The system itself was
+        improved with semantic guidance (cf. \cite{SRASS} for further details
+        on semantic guidance).
+    \item \textbf{MaSh} \cite{MaSh} employed it for improving Isabelle's
+        Sledgehammer, which is a tool used for ATP proving of subgoals of
+        a theory in Isabelle.  As before, all current axioms are ranked,
+        a number of the top ranked ones are taken and ATPs are repeatedly
+        invoked with various fact number/time limits and successful proofs are
+        learnt. The differences to the previous work lie in how features of
+        premises/proofs are created and how everything integrates with the
+        ITP system being improved. Note that even the ML algorithm didn't
+        change a lot -- it is still a naive Bayes, but a custom
+        implementation, in order to improve performance (previous works used
+        off-the-shelf tool, such as SNoW \citep{SNoW}).
+    \item \textbf{Learning with Flyspeck } -- the policy was also applied to
+        the Flyspeck project\citep{FlyspeckProject}. One of the key differences
+        here are that \cite{Flyspeck} claim that translation to ATP formalisms
+        are sound in contrast to previous translations, e.g. Isabelle or Mizar
+        to ATP, where one symbol from the corresponding ITP may be translated
+        in several different ways. The motivation for a consistent translation
+        is that external (heuristical) premise selection tools cannot be used
+        otherwise and in their ranking scheme \cite{Flyspeck} use them as
+        a `preprocessing' step of the (re)learning loop. Other differences are
+        (again) what features are used, how are these extracted, what is the
+        learning algorithm, etc.
+\end{itemize}
+
+Research time has also been devoted to improving the ML methodology for
+premise selection, since this is a key component of good premise selection,
+regardless whether we employ the aforementioned policy or not. Two of the
+methods that have been tested are:
+\begin{itemize}
+    \item \textbf{Kernel Methods} -- 
+        \cite{PremiseSelection} used a premise selection algorithm based on
+        kernel methods. The benefit is that such classifier can learn
+        non-linear dependencies (it was shown in the paper that NB can learn
+        only linear ones). 
+    \item \textbf{k Nearest Neighbours (k-NNs)} -- \cite{FlyspeckFeatW} also
+        showed that k-NNs with Inverse Document Frequency weighting of the
+        features can give better results than naive Bayes. 
+\end{itemize}
+
+More recently, with the increasing popularity of Deep Learning, neural network
+models have been applied to premise selection \citep{DeepMath}. The approach
+taken embeds a pair of (conjecture, axiom) into a feature vector, which is then
+processed by a neural network, resulting in a metric of how useful this axiom
+would be. The training loss for a conjecture is defined as the worst ranking of
+a premise which is known to be a true dependency (i.e. cannot prove the
+conjecture without it). Many neural network models were tested, inspired both
+from Computer Vision and from Natural Language Processing. Results showed that
+the models can give better results than the baseline of k-NN with handcrafted
+features and in addition be ``complementary'', i.e. even better results are
+obtained when the neural network and hand engineered approaches are combined --
+80\% of the problems used for testing were solved. \cite{DeepMath} were the
+first to apply Deep Learning to theorem proving for premise selection and
+presented how a variety of neural network models can be used for premise
+selection.
+
+The need for larger datasets was also identified. One such dataset is HolStep
+\citep{HolStep}, featuring 2M statements (axioms/proofs/etc.) and 10K
+conjectures making applying data hungry techniques like DL for premise
+selection\footnote{Some similar tasks were also proposed in \cite{HolStep}}
+much easier.
+
+Currently, the state-of-the-ard uses ML/DL approaches for premise selection
+(e.g. \cite{DeepGraph}). DL has also found use in generating full ITP
+tactics --  see \cite{LearningToProveITP, GamePad} for example -- and the focus
+in the last year or so is more on end-to-end Interactive Theorem Proving proof
+generation, rather than only premise selection.
 
 \cite{FuchsGenetic} -- heuristic learned to be chosen with Gen Algo
 
@@ -62,7 +193,7 @@ Interaction based around proof script (seq of commands sent to ITP). Provides
 UI.
 
 Mizar proof advisor \cite{MizarProofAdvisor} -- MPTP (Mizar Problems for
-Theorem Proving) is system described; translates MML into FOL for ATPs and for
+Theorem Proving) is system described; translates MML into ATPs and for
 generating thm proving problems corresponding to Mizar Mathematical Library.
 Mizar proof advisor used for selecting suitable axioms from the large library
 for an arbirtrary problem. Feature based ML framework, symbols are the features
@@ -330,7 +461,7 @@ many of the symbols occurring in a formula are defined by formulas earlier in
 the corpus, and we can use the axiom-embeddings of those symbols to improve
 model performance.
 
-HOLstep \cite{Holstep} -- In this paper, we introduce a new dataset based on
+HOLstep \cite{HolStep} -- In this paper, we introduce a new dataset based on
 Higher-Order Logic (HOL) proofs, for the purpose of developing new machine
 learning-based theorem-proving strategies. Reasons for hol given in paper and
 how dataset is extracted. Several possible tasks are outlined.
@@ -373,6 +504,18 @@ tableau, followed by another bigstep, etc.
 
 Great paper, but need to review some RL for presentation.
 
+\textbf{GENERATING TACTICS}
+
+\cite{LearningToProveITP}
+\cite{SEPIA}
+\cite{TacticToe}
+\cite{LearningToProveTactics}
+\cite{GamePad}
+\cite{HOList}
+\cite{Bridge2014}
+
+\textbf{OTHER}
+\cite{GNNsForTP}
 
 
 \bibliographystyle{apalike}
