@@ -7,6 +7,14 @@ Alama, J., K{\"{u}}hlwein, D., Tsivtsivadze, E., Urban, J., and Heskes, T.
   methods.
 \newblock {\em CoRR}, abs/1108.3446.
 
+\bibitem[Alemi et~al., 2016]{DeepMath}
+Alemi, A.~A., Irving, G., Szegedy, C., E{\'{e}}n, N., Chollet, F., and Urban,
+  J. (2016).
+\newblock Deep{M}ath - deep sequence models for premise selection.
+\newblock In {\em Advances in Neural Information Processing Systems 29: Annual
+  Conference on Neural Information Processing Systems 2016, December 5-10,
+  2016, Barcelona, Spain}, pages 2235--2243.
+
 \bibitem[Aspinall, 2000]{ProofGeneral}
 Aspinall, D. (2000).
 \newblock {Proof General}: {A} generic tool for proof development.
@@ -33,6 +41,12 @@ Blanchette, J.~C., Greenaway, D., Kaliszyk, C., K{\"{u}}hlwein, D., and Urban,
 Bridge, J.~P., Holden, S.~B., and Paulson, L.~C. (2014).
 \newblock Machine learning for first-order theorem proving.
 \newblock {\em Journal of Automated Reasoning}, 53(2):141--172.
+
+\bibitem[Brown, 2012]{SatallaxProver}
+Brown, C.~E. (2012).
+\newblock Satallax: An automatic higher-order prover.
+\newblock In {\em Automated Reasoning - 6th International Joint Conference,
+  {IJCAR} 2012, Manchester, UK, June 26-29, 2012. Proceedings}, pages 111--117.
 
 \bibitem[Carlsonn et~al., 1999]{SNoW}
 Carlsonn, A.~J., Cumby, C.~M., Rosen, J.~L., and Roth, D. (1999).
@@ -62,6 +76,13 @@ Denzinger, J. and Schulz, S. (1996).
 Duncan, H. (2007).
 \newblock {\em The use of data-mining for the automatic formation of tactics}.
 \newblock PhD thesis, University of Edinburgh, {UK}.
+
+\bibitem[F{\"{a}}rber and Brown, 2016]{Satallax}
+F{\"{a}}rber, M. and Brown, C.~E. (2016).
+\newblock Internal guidance for satallax.
+\newblock In {\em Automated Reasoning - 8th International Joint Conference,
+  {IJCAR} 2016, Coimbra, Portugal, June 27 - July 2, 2016, Proceedings}, pages
+  349--361.
 
 \bibitem[Fuchs, 1995]{FuchsGenetic}
 Fuchs, M. (1995).
@@ -116,13 +137,12 @@ Huang, D., Dhariwal, P., Song, D., and Sutskever, I. (2019).
 \newblock In {\em 7th International Conference on Learning Representations,
   {ICLR} 2019, New Orleans, LA, USA, May 6-9, 2019}.
 
-\bibitem[Irving et~al., 2016]{DeepMath}
-Irving, G., Alemi, A.~A., Szegedy, C., E{\'{e}}n, N., Chollet, F., and Urban,
-  J. (2016).
-\newblock Deep{M}ath - deep sequence models for premise selection.
-\newblock In {\em Advances in Neural Information Processing Systems 29: Annual
-  Conference on Neural Information Processing Systems 2016, December 5-10,
-  2016, Barcelona, Spain}, pages 2235--2243.
+\bibitem[Jakubuv and Urban, 2017]{Enigma}
+Jakubuv, J. and Urban, J. (2017).
+\newblock {ENIGMA:} efficient learning-based inference guiding machine.
+\newblock In {\em Intelligent Computer Mathematics - 10th International
+  Conference, {CICM} 2017, Edinburgh, UK, July 17-21, 2017, Proceedings}, pages
+  292--302.
 
 \bibitem[Kaliszyk et~al., 2017]{HolStep}
 Kaliszyk, C., Chollet, F., and Szegedy, C. (2017).
@@ -170,10 +190,25 @@ Kaliszyk, C., Urban, J., and Vyskocil, J. (2014).
 \newblock In {\em 4th Workshop on Practical Aspects of Automated Reasoning,
   PAAR@IJCAR 2014, Vienna, Austria, 2014}, pages 60--66.
 
+\bibitem[Kaliszyk et~al., 2015]{EFSF}
+Kaliszyk, C., Urban, J., and Vyskocil, J. (2015).
+\newblock Efficient semantic features for automated reasoning over large
+  theories.
+\newblock In {\em Proceedings of the Twenty-Fourth International Joint
+  Conference on Artificial Intelligence, {IJCAI} 2015, Buenos Aires, Argentina,
+  July 25-31, 2015}, pages 3084--3090.
+
 \bibitem[K{\"u}hlwein et~al., 2013]{MaSh}
 K{\"u}hlwein, D., Blanchette, J.~C., Kaliszyk, C., and Urban, J. (2013).
 \newblock Ma{Sh}: {M}achine {L}earning for {S}ledgehammer.
 \newblock In {\em ITP}.
+
+\bibitem[Loos et~al., 2017]{DNGPS}
+Loos, S.~M., Irving, G., Szegedy, C., and Kaliszyk, C. (2017).
+\newblock Deep network guided proof search.
+\newblock In {\em LPAR-21, 21st International Conference on Logic for
+  Programming, Artificial Intelligence and Reasoning, Maun, Botswana, May 7-12,
+  2017}, pages 85--105.
 
 \bibitem[Meng and Paulson, 2009]{LightweightPaulson}
 Meng, J. and Paulson, L.~C. (2009).
@@ -187,6 +222,11 @@ Naumowicz, A. and Kornilowicz, A. (2009).
 \newblock In {\em Theorem Proving in Higher Order Logics, 22nd International
   Conference, TPHOLs 2009, Munich, Germany, August 17-20, 2009. Proceedings},
   pages 67--72.
+
+\bibitem[Otten and Bibel, 2003]{leancop}
+Otten, J. and Bibel, W. (2003).
+\newblock {leanCoP}: lean connection-based theorem proving.
+\newblock {\em J. Symb. Comput.}, 36(1-2):139--161.
 
 \bibitem[Paliwal et~al., 2019]{GNNsForTP}
 Paliwal, A., Loos, S.~M., Rabe, M.~N., Bansal, K., and Szegedy, C. (2019).
