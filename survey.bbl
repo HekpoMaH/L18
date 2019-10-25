@@ -15,32 +15,11 @@ Alemi, A.~A., Irving, G., Szegedy, C., E{\'{e}}n, N., Chollet, F., and Urban,
   Conference on Neural Information Processing Systems 2016, December 5-10,
   2016, Barcelona, Spain}, pages 2235--2243.
 
-\bibitem[Aspinall, 2000]{ProofGeneral}
-Aspinall, D. (2000).
-\newblock {Proof General}: {A} generic tool for proof development.
-\newblock In {\em Tools and Algorithms for Construction and Analysis of
-  Systems, 6th International Conference, {TACAS} 2000, Held as Part of the
-  European Joint Conferences on the Theory and Practice of Software, {ETAPS}
-  2000, Berlin, Germany, March 25 - April 2, 2000, Proceedings}, pages 38--42.
-
-\bibitem[Bansal et~al., 2019]{HOList}
-Bansal, K., Loos, S.~M., Rabe, M.~N., Szegedy, C., and Wilcox, S. (2019).
-\newblock Holist: An environment for machine learning of higher order logic
-  theorem proving.
-\newblock In {\em Proceedings of the 36th International Conference on Machine
-  Learning, {ICML} 2019, 9-15 June 2019, Long Beach, California, {USA}}, pages
-  454--463.
-
-\bibitem[Blanchette et~al., 2016]{LearnBasedFactSelIsabel}
-Blanchette, J.~C., Greenaway, D., Kaliszyk, C., K{\"{u}}hlwein, D., and Urban,
-  J. (2016).
-\newblock A learning-based fact selector for {I}sabelle/{HOL}.
-\newblock {\em J. Autom. Reasoning}, 57(3):219--244.
-
-\bibitem[Bridge et~al., 2014]{Bridge2014}
+\bibitem[Bridge et~al., 2014]{LearningToSelect}
 Bridge, J.~P., Holden, S.~B., and Paulson, L.~C. (2014).
-\newblock Machine learning for first-order theorem proving.
-\newblock {\em Journal of Automated Reasoning}, 53(2):141--172.
+\newblock Machine learning for first-order theorem proving - learning to select
+  a good heuristic.
+\newblock {\em J. Autom. Reasoning}, 53(2):141--172.
 
 \bibitem[Brown, 2012]{SatallaxProver}
 Brown, C.~E. (2012).
@@ -58,65 +37,12 @@ Davis, M., Logemann, G., and Loveland, D. (1962).
 \newblock A machine program for theorem-proving.
 \newblock {\em Commun. ACM}, 5(7):394--397.
 
-\bibitem[Denzinger et~al., 1997]{HighPerfATPAI}
-Denzinger, J., Fuchs, M., and Fuchs, M. (1997).
-\newblock High performance atp systems by combining several ai methods.
-\newblock In {\em Proceedings of the 15th International Joint Conference on
-  Artifical Intelligence - Volume 1}, IJCAI'97, pages 102--107, San Francisco,
-  CA, USA. Morgan Kaufmann Publishers Inc.
-
-\bibitem[Denzinger and Schulz, 1996]{DomKnThmProv}
-Denzinger, J. and Schulz, S. (1996).
-\newblock Learning domain knowledge to improve theorem proving.
-\newblock In {\em Automated Deduction - CADE-13, 13th International Conference
-  on Automated Deduction, New Brunswick, NJ, USA, July 30 - August 3, 1996,
-  Proceedings}, pages 62--76.
-
-\bibitem[Duncan, 2007]{DataMiningAFT}
-Duncan, H. (2007).
-\newblock {\em The use of data-mining for the automatic formation of tactics}.
-\newblock PhD thesis, University of Edinburgh, {UK}.
-
 \bibitem[F{\"{a}}rber and Brown, 2016]{Satallax}
 F{\"{a}}rber, M. and Brown, C.~E. (2016).
 \newblock Internal guidance for satallax.
 \newblock In {\em Automated Reasoning - 8th International Joint Conference,
   {IJCAR} 2016, Coimbra, Portugal, June 27 - July 2, 2016, Proceedings}, pages
   349--361.
-
-\bibitem[Fuchs, 1995]{FuchsGenetic}
-Fuchs, M. (1995).
-\newblock Learning proof heuristics by adaptive parameters.
-\newblock In {\em Machine Learning, Proceedings of the Twelfth International
-  Conference on Machine Learning, Tahoe City, California, USA, July 9-12,
-  1995}, pages 235--243.
-
-\bibitem[Fuchs, 1998]{FeatureBasedThmP}
-Fuchs, M. (1998).
-\newblock A feature-based learning method for theorem proving.
-\newblock In {\em Proceedings of the Fifteenth National/Tenth Conference on
-  Artificial Intelligence/Innovative Applications of Artificial Intelligence},
-  AAAI '98/IAAI '98, pages 457--462, Menlo Park, CA, USA. American Association
-  for Artificial Intelligence.
-
-\bibitem[Gauthier et~al., 2017]{TacticToe}
-Gauthier, T., Kaliszyk, C., and Urban, J. (2017).
-\newblock Tactictoe: Learning to reason with {HOL4} tactics.
-\newblock In {\em LPAR-21, 21st International Conference on Logic for
-  Programming, Artificial Intelligence and Reasoning, Maun, Botswana, May 7-12,
-  2017}, pages 125--143.
-
-\bibitem[Gauthier et~al., 2018]{LearningToProveTactics}
-Gauthier, T., Kaliszyk, C., Urban, J., Kumar, R., and Norrish, M. (2018).
-\newblock Learning to prove with tactics.
-\newblock {\em CoRR}, abs/1804.00596.
-
-\bibitem[Gransden et~al., 2015]{SEPIA}
-Gransden, T., Walkinshaw, N., and Raman, R. (2015).
-\newblock {SEPIA:} search for proofs using inferred automata.
-\newblock In {\em Automated Deduction - {CADE-25} - 25th International
-  Conference on Automated Deduction, Berlin, Germany, August 1-7, 2015,
-  Proceedings}, pages 246--255.
 
 \bibitem[Hales, 2006]{FlyspeckProject}
 Hales, T.~C. (2006).
@@ -164,18 +90,13 @@ Kaliszyk, C. and Urban, J. (2014).
 \newblock Learning-assisted automated reasoning with {F}lyspeck.
 \newblock {\em J. Autom. Reasoning}, 53(2):173--213.
 
-\bibitem[Kaliszyk and Urban, 2015a]{femalecop}
-Kaliszyk, C. and Urban, J. (2015a).
+\bibitem[Kaliszyk and Urban, 2015]{femalecop}
+Kaliszyk, C. and Urban, J. (2015).
 \newblock {FEM}a{L}e{C}o{P}: Fairly efficient machine learning connection
   prover.
 \newblock In {\em Logic for Programming, Artificial Intelligence, and Reasoning
   - 20th International Conference, {LPAR-20} 2015, Suva, Fiji, November 24-28,
   2015, Proceedings}, pages 88--96.
-
-\bibitem[Kaliszyk and Urban, 2015b]{Mizar40}
-Kaliszyk, C. and Urban, J. (2015b).
-\newblock Mizar 40 for mizar 40.
-\newblock {\em J. Autom. Reasoning}, 55(3):245--256.
 
 \bibitem[Kaliszyk et~al., 2018]{RLTP}
 Kaliszyk, C., Urban, J., Michalewski, H., and Ols{\'{a}}k, M. (2018).
@@ -183,12 +104,6 @@ Kaliszyk, C., Urban, J., Michalewski, H., and Ols{\'{a}}k, M. (2018).
 \newblock In {\em Advances in Neural Information Processing Systems 31: Annual
   Conference on Neural Information Processing Systems 2018, NeurIPS 2018, 3-8
   December 2018, Montr{\'{e}}al, Canada.}, pages 8836--8847.
-
-\bibitem[Kaliszyk et~al., 2014]{MaLARea04}
-Kaliszyk, C., Urban, J., and Vyskocil, J. (2014).
-\newblock Machine learner for automated reasoning 0.4 and 0.5.
-\newblock In {\em 4th Workshop on Practical Aspects of Automated Reasoning,
-  PAAR@IJCAR 2014, Vienna, Austria, 2014}, pages 60--66.
 
 \bibitem[Kaliszyk et~al., 2015]{EFSF}
 Kaliszyk, C., Urban, J., and Vyskocil, J. (2015).
@@ -203,18 +118,24 @@ K{\"u}hlwein, D., Blanchette, J.~C., Kaliszyk, C., and Urban, J. (2013).
 \newblock Ma{Sh}: {M}achine {L}earning for {S}ledgehammer.
 \newblock In {\em ITP}.
 
+\bibitem[K{\"{u}}hlwein and Urban, 2015]{MaLeS}
+K{\"{u}}hlwein, D. and Urban, J. (2015).
+\newblock {MaLeS}: {A} framework for automatic tuning of automated theorem
+  provers.
+\newblock {\em J. Autom. Reasoning}, 55(2):91--116.
+
+\bibitem[Lederman et~al., 2018]{DRL}
+Lederman, G., Rabe, M.~N., and Seshia, S.~A. (2018).
+\newblock Learning heuristics for automated reasoning through deep
+  reinforcement learning.
+\newblock {\em CoRR}, abs/1807.08058.
+
 \bibitem[Loos et~al., 2017]{DNGPS}
 Loos, S.~M., Irving, G., Szegedy, C., and Kaliszyk, C. (2017).
 \newblock Deep network guided proof search.
 \newblock In {\em LPAR-21, 21st International Conference on Logic for
   Programming, Artificial Intelligence and Reasoning, Maun, Botswana, May 7-12,
   2017}, pages 85--105.
-
-\bibitem[Meng and Paulson, 2009]{LightweightPaulson}
-Meng, J. and Paulson, L.~C. (2009).
-\newblock Lightweight relevance filtering for machine-generated resolution
-  problems.
-\newblock {\em J. Applied Logic}, 7(1):41--57.
 
 \bibitem[Naumowicz and Kornilowicz, 2009]{MizarOverview}
 Naumowicz, A. and Kornilowicz, A. (2009).
@@ -233,17 +154,15 @@ Paliwal, A., Loos, S.~M., Rabe, M.~N., Bansal, K., and Szegedy, C. (2019).
 \newblock Graph representations for higher-order logic and theorem proving.
 \newblock {\em CoRR}, abs/1905.10006.
 
+\bibitem[Piotrowski and Urban, 2019]{GuidingTPbyRNNs}
+Piotrowski, B. and Urban, J. (2019).
+\newblock Guiding theorem proving by recurrent neural networks.
+\newblock {\em CoRR}, abs/1905.07961.
+
 \bibitem[Riazanov and Voronkov, 2002]{VAMPIRE}
 Riazanov, A. and Voronkov, A. (2002).
 \newblock The design and implementation of {VAMPIRE}.
 \newblock {\em {AI} Commun.}, 15(2-3):91--110.
-
-\bibitem[Rockt{\"{a}}schel and Riedel, 2017]{EndToEndDiffProving}
-Rockt{\"{a}}schel, T. and Riedel, S. (2017).
-\newblock End-to-end differentiable proving.
-\newblock In {\em Advances in Neural Information Processing Systems 30: Annual
-  Conference on Neural Information Processing Systems 2017, 4-9 December 2017,
-  Long Beach, CA, {USA}}, pages 3788--3800.
 
 \bibitem[Schulz, 2002]{Eprover}
 Schulz, S. (2002).
@@ -261,12 +180,6 @@ Sutcliffe, G. and Puzis, Y. (2007).
 Urban, J. (2004).
 \newblock {MPTP} - motivation, implementation, first experiments.
 \newblock {\em J. Autom. Reasoning}, 33(3-4):319--339.
-
-\bibitem[Urban, 2006]{MizarMode}
-Urban, J. (2006).
-\newblock {MizarMode} - an integrated proof assistance tool for the mizar way
-  of formalizing mathematics.
-\newblock {\em J. Applied Logic}, 4(4):414--427.
 
 \bibitem[Urban, 2007]{MaLARea}
 Urban, J. (2007).

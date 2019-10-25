@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex survey"] 1571950611 "survey.aux" "survey.bbl" "survey" 1571950611
+["bibtex survey"] 1572011703 "survey.aux" "survey.bbl" "survey" 1572011939
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1480098433 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "refs.bib" 1571949908 34916 c34f9c90ba274132770258eb16c6fbdf ""
-  "survey.aux" 1571950611 4840 218d25d3aff791adf7dd1eba99e60f02 ""
+  "refs.bib" 1572008855 37300 d2ce4a617809e05066071b882a59e40b ""
+  "survey.aux" 1572011939 3673 165f40df9c589441b7d8124e58f437ae ""
   "survey.bcf" 0 -1 0 ""
   (generated)
-  "survey.bbl"
   "survey.blg"
-["pdflatex"] 1571950611 "survey.tex" "survey.pdf" "survey" 1571950611
+  "survey.bbl"
+["pdflatex"] 1572011938 "survey.tex" "survey.pdf" "survey" 1572011939
   "/etc/texmf/web2c/texmf.cnf" 1548091285 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -26,12 +26,9 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1480098733 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1480098733 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1480098733 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1480098733 37912 77d683123f92148345f3fc36a38d9ab1 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1480098733 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1480098733 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1480098733 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1480098733 32362 179c33bbf43f19adbb3825bb4e36e57a ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1480098733 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1480098733 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1480098733 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1480098733 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
@@ -65,9 +62,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1548091467 164837 f472f40ab643c6b1fa7fff8b04d446df ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1548091468 812560 571077f2fc4d1b7289443e6dceecb71e ""
   "malecop_arch.png" 1571934618 80787 932928d05c41403560dc0cfb871b5e76 ""
-  "survey.aux" 1571950609 4793 b698ca235e1c8bdfd65633718a9f456d ""
-  "survey.bbl" 1571950609 13583 7dde39045cd367c4204924cf10de71c2 "bibtex survey"
-  "survey.tex" 1571950608 37891 5cbba97d1fae679564cefc018d143f20 ""
+  "survey.aux" 1572011939 3673 165f40df9c589441b7d8124e58f437ae ""
+  "survey.bbl" 1572011703 9491 632486a8a1cc59945737f090b0222b5c "bibtex survey"
+  "survey.tex" 1572011938 40986 02865917990e9d8606d346dcc7861604 ""
   (generated)
   "survey.pdf"
   "survey.aux"
