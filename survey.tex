@@ -182,32 +182,32 @@ Automated Theorem Prover.
 
 \cite{malecop} proposed an `advisor' architecture to serve queries produced by
 the ATP and created a Machine Learning Connection Prover (MaLeCoP) which used
-ML for the extension step in a tableau proof. In a short overview, the queries
-usually consist of the current proof state (what is left to be proved/what we
-know/etc.) or training data (proof state with what steps lead to a prove and
-what don't). These queries would be translated to the format used by an
-external ML system and analysed by that system.  The guidance of the system
-will then be translated back to the ATP. The whole system is depicted in Figure
-\ref{fig:malecop} -- \textbf{P} represents a prover, \textbf{A} the advisor
-system, \textbf{E} the external system. It can be noted that the idea of
-\emph{usefulness of axioms} is very similar to what MaLARea does, but here, the
-actual proof state is also taken into account and the advice is on what axioms
-are most useful for the next steps, rather than for the \emph{whole} proof.
+ML to advise on the most useful clause for every extension step in a tableau
+proof. In a short overview, the queries usually consist of the current proof
+state (what is left to be proved/what we know/etc.) or training data (proof
+state with what steps lead to a prove and what don't). These queries would be
+translated to the format used by an external ML system and analysed by that
+system. The guidance of the system will then be translated back to the ATP.
+The whole system is depicted in Figure \ref{fig:malecop} -- \textbf{P}
+represents a prover, \textbf{A} the advisor system, \textbf{E} the external
+system. It can be noted that the idea of \emph{usefulness of axioms} is very
+similar to what MaLARea does, but here, the actual proof state is also taken
+into account and the advice is on what axioms are most useful for the next
+steps, rather than for the \emph{whole} proof.
 
-By substituting leanCoP, a connection tableau\footnote{A variation of
-tableau method for proving. See \cite{leancop} for more details on leanCoP}
-prover for \textbf{P}, SNoW \citep{SNoW} for \textbf{E} and a hand-implemented
-script for \textbf{A}, MaLeCoP \citep{malecop} was born. Evaluation showed that
-MaLeCoP can produce significantly shorter proofs than those produced without
-using any ML, but generalization (solving unseen problems) does not seem good
-(cf. table 2 of \cite{malecop}) and there was also a very high overhead due to
-recomputing the features for similar states and the use of and communication to
-external ML system which made the system impractical.
+By substituting leanCoP, a connection tableau\footnote{A goal-oriented
+variation of tableau method for proving. See \cite{leancop} for more details on
+leanCoP} prover for \textbf{P}, SNoW \citep{SNoW} for \textbf{E} and
+a hand-implemented script for \textbf{A}, MaLeCoP was born. Evaluation showed
+that MaLeCoP can produce shorter by almost an order of magnitude proofs than
+those produced without using any ML but there was a very high overhead due
+to recomputing the features for similar states and the use of and communication
+to external ML system which made the system impractical.
 
 Based on the ideas of the above prototype, the system was greatly improved
 \citep{femalecop}, making it both much faster than the prototype and better in
-generalisation (15.7\% more new problems were proved). Some of the differences
-are:
+generalisation (90 unseen problems were proved compared to 7). Some of the
+differences to MaLeCoP are:
 \begin{itemize}
     \item \textbf{efficient (re)computation of the features and relevance
         computation} -- the feature vector of the proof state (as well as
@@ -219,7 +219,8 @@ are:
         extraction, e.g. hash tables for faster accesses of the sum of
         occurences for a given features and more
     \item fast custom implementation of the ML advising system and its
-        integration directly in the leanCoP code
+        integration directly in the leanCoP code to remove any communication
+        overhead
 \end{itemize}
 According to \cite{femalecop} and to the best of my knowledge, this was
 the first time ML was (successfully) used for internally guiding an ATP.
