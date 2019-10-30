@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex survey"] 1572363110 "survey.aux" "survey.bbl" "survey" 1572363110
+["bibtex survey"] 1572363110 "survey.aux" "survey.bbl" "survey" 1572431601
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1480098433 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "refs.bib" 1572008855 37300 d2ce4a617809e05066071b882a59e40b ""
-  "survey.aux" 1572363110 3635 a81a4b56dfc1325705c12e90d81ee606 ""
+  "survey.aux" 1572431601 3635 a81a4b56dfc1325705c12e90d81ee606 ""
   "survey.bcf" 0 -1 0 ""
   (generated)
-  "survey.bbl"
   "survey.blg"
-["pdflatex"] 1572363110 "survey.tex" "survey.pdf" "survey" 1572363110
+  "survey.bbl"
+["pdflatex"] 1572431601 "survey.tex" "survey.pdf" "survey" 1572431601
   "/etc/texmf/web2c/texmf.cnf" 1548091285 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -62,9 +62,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1548091467 164837 f472f40ab643c6b1fa7fff8b04d446df ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1548091468 812560 571077f2fc4d1b7289443e6dceecb71e ""
   "malecop_arch.png" 1571934618 80787 932928d05c41403560dc0cfb871b5e76 ""
-  "survey.aux" 1572362751 3654 465a5ae7518ad0583089fe6c40bb28fe ""
-  "survey.bbl" 1572362617 9491 632486a8a1cc59945737f090b0222b5c "bibtex survey"
-  "survey.tex" 1572363108 41001 4c15c3c7b98190ad99b7434656185039 ""
+  "survey.aux" 1572431601 3635 a81a4b56dfc1325705c12e90d81ee606 ""
+  "survey.bbl" 1572363110 9491 632486a8a1cc59945737f090b0222b5c "bibtex survey"
+  "survey.tex" 1572431593 41009 cfe104c5d82039185f7f7572871dfed0 ""
   (generated)
   "survey.pdf"
   "survey.log"

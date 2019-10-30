@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Connection Tableau}{3}{0}{1}
+\beamer@sectionintoc {2}{Advising with RL}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{What do we advise?}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{How do we advise?}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Was it worth it?}{6}{0}{2}
+\beamer@sectionintoc {3}{Summary}{6}{0}{3}
+\beamer@sectionintoc {4}{Second Section}{9}{0}{4}
