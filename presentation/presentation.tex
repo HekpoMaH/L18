@@ -4,9 +4,14 @@
 \usepackage{tikz}
 \usepackage{tikz-qtree}
 \usepackage{mathtools}
+\usepackage{textpos}
+\usepackage{stackengine} 
+\newcommand\oast{\stackMath\mathbin{\stackinset{c}{0ex}{c}{0ex}{\ast}{\bigcirc}}}
 %\usepackage{pifont}
 \newcommand{\smallspace}{\hspace{1mm}}
+\setbeamercolor{alerted text}{fg=blue}
 
+\graphicspath{{./images/}}
 \mode<presentation> {
 \usetheme{Madrid}
 
@@ -57,192 +62,373 @@
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
-\section{Connection Tableau} 
+\section{How tableau provers work} 
 
 \begin{frame}
-    \frametitle{Connection Tableau}
-    \begin{columns}
-        \column{.45\textwidth}
-        \begin{align*}
-            &\begin{aligned}
-                \{P,\smallspace R\} \smallspace
-                \{\neg{P},\smallspace f(X) \}\smallspace
-                \{\neg{f(b) },\smallspace P\}\smallspace
-            \end{aligned}\\
-            &\begin{aligned}
-                \{\neg{f(c) },\smallspace \neg{P}\}\smallspace
-                \{P,\smallspace \neg{P}\}
-            \end{aligned}
-        \end{align*}
-        \column{.45\textwidth}
-                \centering
-                \only<1>{
-                    \begin{tikzpicture}
-                    \tikzset{execute at begin node=\strut}
-                    \tikzset{every tree node/.style={anchor=center, scale=0.86}}
-                    \Tree
-                    [.{}
-                        [.$P$ ]
-                        [.$R$ ]
-                    ]
-                    \end{tikzpicture}
-                }
-                \only<2>{
-                    \begin{tikzpicture}
-                    \tikzset{execute at begin node=\strut}
-                    \tikzset{every tree node/.style={anchor=center, scale=0.86}}
-                    \Tree
-                    [.{}
-                        [.$P$ 
-                            [.{$\neg{P}$} ]
-                            [.{$f(X')$} ]
-                        ]
-                        [.$R$ ]
-                    ]
-                    \end{tikzpicture}
-                }
-                \only<3>{
-                    \begin{tikzpicture}
-                    \tikzset{every tree node/.style={anchor=center, scale=0.86}}
-                    \tikzset{execute at begin node=\strut}
-                    \Tree
-                    [.{}
-                        [.$P$ 
-                            [.{$\neg{P}$} ]
-                            [.{$f(X')$}
-                                [.$\neg{f(c)}$ ]
-                                [.$\neg{P}$ ] ] ]
-                        [.$R$
-                            [.$P$
-                                [.$\neg{P}$ ]
-                                [.$f(X'')$
-                                    [.$\neg{f(c)}$ ]
-                                    [.$\neg{P}$ ] ] ]
-                            [.$\neg{R}$ ] ]
-                    ]
-                    \end{tikzpicture}
-                }
-    \end{columns}
+    \frametitle{How tableau provers work}
+    \begin{figure}
+    \includegraphics[width=\linewidth]{tableaux.png}
+    \caption{The search tree of a tableau based ATP\footnote{Source: Wikipedia}}
+    \end{figure}
+
 \end{frame}
+% \begin{frame}
+%     \frametitle{Connection Tableau - how it works}
+%     Assume the classical proof by contradiction setting
+%     \begin{itemize}
+%         \item Translate the formula to CNF
+%         \item Skolemize
+%         \item Represent as set of clauses
+%         \item Proof proceeds by building tableau with \alert{connections}
+%             \begin{itemize}
+%                 \item ($L$, $\neg{L}$) is a \alert{connection}
+%                 \item We will see an example
+%             \end{itemize}
+%         \item Successful proof $\iff$ connection in every path from root to leaf
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{Connection Tableau - an example}
+%     \begin{columns}
+%         \column{.45\textwidth}
+%         Consider\footnotemark:
+%         \begin{align*}
+%             &\begin{aligned}
+%                 \{P,\smallspace R\} \smallspace
+%                 \{\neg{P},\smallspace X \}\smallspace
+%                 \{\neg{b},\smallspace P\}\smallspace
+%             \end{aligned}\\
+%             &\begin{aligned}
+%                 \{\neg{c },\smallspace \neg{P}\}\smallspace
+%                 \{P,\smallspace \neg{R}\}
+%             \end{aligned}
+%         \end{align*}
+
+%         \begin{itemize}
+%             \item<2-> Start rule
+%             \item<3-> Extension rule
+%             \item<5-> Reduction rule
+%         \end{itemize}
+%         \column{.45\textwidth}
+%                 \centering
+%                 \only<2>{
+%                     \begin{tikzpicture}[remember picture, overlay]
+%                     \tikzstyle{level 1} = [level distance=.8cm, sibling distance=30mm]
+%                     \tikzstyle{level 2} = [level distance=1cm, sibling distance=10mm]
+%                     \tikzstyle{level 3} = [level distance=1cm, sibling distance=10mm]
+%                     % \tikzset{every tree node/.style={anchor=center, scale=0.84}}
+%                     \node (s) at (0, 2) {}
+%                         child { node{$P$} }
+%                         child { node{$R$} };
+%                     \end{tikzpicture}%
+%                 }%
+%                 \only<3>{
+%                     \begin{tikzpicture}[remember picture, overlay]
+%                     \tikzstyle{level 1} = [level distance=.8cm, sibling distance=30mm]
+%                     \tikzstyle{level 2} = [level distance=1cm, sibling distance=10mm]
+%                     \tikzstyle{level 3} = [level distance=1cm, sibling distance=10mm]
+%                     % \tikzset{every tree node/.style={anchor=center, scale=0.84}}
+%                     \node (s) at (0, 2) {}
+%                         child { node{$P$}
+%                             child { node{$\neg{P}$} }
+%                             child { node{$X'$} } }
+%                         child { node{$R$} };
+%                     \end{tikzpicture}%
+%                 }%
+%                 \only<4-5>{
+%                     \begin{tikzpicture}[remember picture, overlay]
+%                     \tikzstyle{level 1} = [level distance=.8cm, sibling distance=30mm]
+%                     \tikzstyle{level 2} = [level distance=1cm, sibling distance=10mm]
+%                     \tikzstyle{level 3} = [level distance=1cm, sibling distance=10mm]
+%                     % \tikzset{every tree node/.style={anchor=center, scale=0.84}}
+%                     \node (s) at (0, 2) {}
+%                         child { node (p) {$P$}
+%                             child { node {$\neg{P}$} }
+%                             child { node{$X'$}
+%                                 child{ node{$\neg{c}$} }
+%                             child{ node (negp) {$\neg{P}$} } } }
+%                         child { node{$R$} };
+%                     \only<5>{\draw[densely dashed] (p) to [bend left=50,auto] (negp);}
+%                     \end{tikzpicture}%
+%                 }%
+%                 \only<6>{
+%                     \begin{tikzpicture}[remember picture, overlay]
+%                     \tikzstyle{level 1} = [level distance=.8cm, sibling distance=30mm]
+%                     \tikzstyle{level 2} = [level distance=1cm, sibling distance=10mm]
+%                     \tikzstyle{level 3} = [level distance=1cm, sibling distance=10mm]
+%                     % \tikzset{every tree node/.style={anchor=center, scale=0.84}}
+%                     \node (s) at (0, 2) {}
+%                         child { node{$P$}
+%                             child { node{$\neg{P}$} }
+%                             child { node{$X'$}
+%                                 child{ node{$\neg{c}$} }
+%                                 child{ node{$\neg{P}$} } } }
+%                         child { node{$R$}
+%                             child { node{$P$}
+%                                 child { node{$\neg{P}$} }
+%                                 child { node{$X''$}
+%                                     child{ node{$\neg{c}$ } }
+%                                     child{ node{$\neg{P}$ } }
+%                                 }
+%                             }
+%                             child { node{$\neg{R}$} } };
+%                     \end{tikzpicture}%
+%                 }%
+%     \end{columns}
+%     \footnotetext[1]{Example adapted from\\ \url{http://www.leancop.de/atp-fub12/atp_fub12_3cop.pdf}}
+% \end{frame}
 % \subsection{Semantics of Connection Tableau}
 
 % \subsection{Searching for a Closed Tableau}
 
-\section{Advising with RL}
+\section{Reinforcement Learning}
 
-\subsection{What do we advise?}
-
-\subsection{How do we advise?}
-
-\subsection{Was it worth it?}
-
-\section{Summary}
-
-% TODO DELETE BELOW
 \begin{frame}
-\frametitle{Paragraphs of Text}
+    \frametitle{Basics}
+    \begin{figure}
+    \includegraphics[width=.7\linewidth]{RL_robot.png}
+    \caption{An agent has to reach a reward without burning\footnote{Source: GeeksForGeeks}}
+    \end{figure}
+\end{frame}
+\subsection{Basics}
+
+\subsection{Application to ATP}
+\begin{frame}
+    \frametitle{Application to ATP}
+    RL to ATP mapping:
+    \begin{itemize}
+        \item agent $\leftrightarrow$ ATP
+        \item environment $\leftrightarrow$ search tree
+        \item actions $\leftrightarrow$ extending search tree
+        \item reward $\leftrightarrow$ finding a closed tableau
+    \end{itemize}
 \end{frame}
 
-%------------------------------------------------
-
-
 \begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
+    \frametitle{Application to ATP -- the UCT formula}
+    For each node $i$, we calculate the Upper Confidence bound applied to
+    Trees, i.e. UCT\citep{UCT}:
+    \begin{columns}
+    \column{.6\textwidth}
+    \begin{equation*}
+        \frac{w_i}{n_i}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
+    \end{equation*}
+    \column{.39\textwidth}
+    \begin{itemize}
+        \item \alert{$w_i$ -- total reward}
+        \item $n_i$ -- number of visits
+        \item $c$ -- hyperparameter
+        \item \alert{$p_i$ -- prior probability}
+        \item $N_i$ -- total parent visits
+    \end{itemize}
+    \end{columns}
+    % Without any learning, all prior probabilities are equal and the values are
+    % determined by the number of open goals.
 \end{frame}
 
-%------------------------------------------------
-
 \begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+    \frametitle{Application to ATP -- Learning the parameters}
+    \framesubtitle{\textbf{Step 1:} Extracting features}
+    \begin{columns}
+    \column{.7\textwidth}
+    For each Literal $L$, e.g. $f(X, Y) = g(sk_1, sk_2(x))$ \footnotemark
+    \begin{itemize}
+        \item Build it's \alert{feature tree}
+        \item Count the \alert{term walks} of length 3
+            \begin{itemize}
+                \item E.g. $(=, f, \oast)$ occurs twice
+            \end{itemize}
+        \item Count the occurrences of each triple, create literal and clause feature vectors
+        \item Feature vector for each state contains:
+            \begin{itemize}
+                \item the triplet occurrence counts for each of its clauses and goals
+                \item additional metadata, e.g. number of goals, most common symbols, etc.
+            \end{itemize}
+    \end{itemize}
+    \column{.2\textwidth}
+    \begin{figure}
+    \includegraphics[width=\textwidth]{AST.png}
+    \caption{Feature Tree}
+    \end{figure}
+    \end{columns}
+    \footnotetext[3]{Example from \cite{Enigma}}
 
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
+    % \textbf{Step 2:} Getting the data:
+    %     \begin{itemize}
+    %         \item Run many Monte-Carlo proof searches
+    %         \item 
+    %     \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Application to ATP -- Learning the parameters}
+    \framesubtitle{\textbf{Steps 2\&3:} Data Extraction and Lerning}
+    \begin{itemize}
+        \item Unrestricted ATP runs to accumulate (some) UCT proof data
+        \item Associate node state and action features 
+            with action `relevance'
+            \begin{itemize}
+                \item $\dfrac{total\ frequency\ of\ action}{action\ frequency\ at\ node}$
+            \end{itemize}
+        \item Associate node state feature with value
+            \begin{itemize}
+                \item 0 if node not a proof
+                \item $0.99^{proof\ depth}$ otherwise
+            \end{itemize}
+        \item Apply regression on the logits to learn `relevance' and value
+    \end{itemize}
 \end{frame}
 
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
+\subsection{Results}
 
 \begin{frame}
-\frametitle{Table}
+\frametitle{Results}
+Results from 2003 problems of the Mizar Mathematical Library \citep{MML} with
+limit of $2\times10^6$ inferences.
+\begin{table}
+\begin{tabular}{l l l l l l}
+\toprule
+Iteration & 1 & 5 & 10 & 15 & 20 \\
+Proved & 1037 & 1182 & 1210 & 1223 & 1235 \\
+\bottomrule
+\end{tabular}
+\caption{Proved problems per iterations of learning}
+\end{table}
 
 \begin{table}
 \begin{tabular}{l l l}
 \toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\textbf{Methodology} & \textbf{Proved} & \textbf{IPS} \\
 \midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
+Heuristics & 876 & 64K \\
+RL & 1235 & 16K \\
 \bottomrule
 \end{tabular}
-\caption{Table caption}
+\caption{Using RL gives 40\% more proves but slows down the inference speed}
 \end{table}
-
 \end{frame}
 
-%------------------------------------------------
+\section{Summary}
 
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
+\frametitle{Summary}
+\begin{itemize}
+    \item Reinforcement Learning can be applied to tableau based provers
+    \item Many new problems solved
+    \item RL (and ML methods in general) slow down provers
+\end{itemize}
+
 \end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
 \begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
+\Huge
+\centering
+Questions?
 \end{frame}
+%% TODO DELETE BELOW
+%\begin{frame}
+%\frametitle{Paragraphs of Text}
+%\end{frame}
 
-%------------------------------------------------
+%%------------------------------------------------
 
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-\cite{MaLARea}
-% An example of the \verb|\cite| command to cite within the presentation:\\~
 
-% This statement requires citation \cite{p1}.
-\end{frame}
+%\begin{frame}
+%\frametitle{Blocks of Highlighted Text}
+%\begin{block}{Block 1}
+%Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+%\end{block}
 
-%------------------------------------------------
+%\begin{block}{Block 2}
+%Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
+%\end{block}
 
-%------------------------------------------------
+%\begin{block}{Block 3}
+%Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
+%\end{block}
+%\end{frame}
+
+%%------------------------------------------------
+
+%\begin{frame}
+%\frametitle{Multiple Columns}
+%\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+%\column{.45\textwidth} % Left column and width
+%\textbf{Heading}
+%\begin{enumerate}
+%\item Statement
+%\item Explanation
+%\item Example
+%\end{enumerate}
+
+%\column{.5\textwidth} % Right column and width
+%Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+%\end{columns}
+%\end{frame}
+
+%%------------------------------------------------
+%\section{Second Section}
+%%------------------------------------------------
+
+%\begin{frame}
+%\frametitle{Table}
+
+%\begin{table}
+%\begin{tabular}{l l l}
+%\toprule
+%\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+%\midrule
+%Treatment 1 & 0.0003262 & 0.562 \\
+%Treatment 2 & 0.0015681 & 0.910 \\
+%Treatment 3 & 0.0009271 & 0.296 \\
+%\bottomrule
+%\end{tabular}
+%\caption{Table caption}
+%\end{table}
+
+%\end{frame}
+
+%%------------------------------------------------
+
+%\begin{frame}
+%\frametitle{Theorem}
+%\begin{theorem}[Mass--energy equivalence]
+%$E = mc^2$
+%\end{theorem}
+%\end{frame}
+
+%%------------------------------------------------
+
+%\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+%\frametitle{Verbatim}
+%\begin{example}[Theorem Slide Code]
+%\end{example}
+%\end{frame}
+
+%%------------------------------------------------
+
+%\begin{frame}
+%\frametitle{Figure}
+%Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
+%%\begin{figure}
+%%\includegraphics[width=0.8\linewidth]{test}
+%%\end{figure}
+%\end{frame}
+
+%%------------------------------------------------
+
+%\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+%\frametitle{Citation}
+%\cite{MaLARea}
+%% An example of the \verb|\cite| command to cite within the presentation:\\~
+
+%% This statement requires citation \cite{p1}.
+%\end{frame}
+
+%%------------------------------------------------
+
+%%------------------------------------------------
 
 \begin{frame}{Bibliography}
 \bibliographystyle{apalike}

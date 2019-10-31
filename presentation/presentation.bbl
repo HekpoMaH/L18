@@ -1,10 +1,21 @@
 \begin{thebibliography}{}
 
-\bibitem[Urban, 2007]{MaLARea}
-Urban, J. (2007).
-\newblock Ma{LAR}ea: a metasystem for automated reasoning in large theories.
-\newblock In {\em Proceedings of the {CADE-21} Workshop on Empirically
-  Successful Automated Reasoning in Large Theories, Bremen, Germany, 17th July
-  2007}.
+\bibitem[Grabowski et~al., 2010]{MML}
+Grabowski, A., Kornilowicz, A., and Naumowicz, A. (2010).
+\newblock Mizar in a nutshell.
+\newblock {\em Journal of Formalized Reasoning}, 3(2):153--245.
+
+\bibitem[Jakubuv and Urban, 2017]{Enigma}
+Jakubuv, J. and Urban, J. (2017).
+\newblock {ENIGMA:} efficient learning-based inference guiding machine.
+\newblock In {\em Intelligent Computer Mathematics - 10th International
+  Conference, {CICM} 2017, Edinburgh, UK, July 17-21, 2017, Proceedings}, pages
+  292--302.
+
+\bibitem[Kocsis and Szepesv\'{a}ri, 2006]{UCT}
+Kocsis, L. and Szepesv\'{a}ri, C. (2006).
+\newblock Bandit based monte-carlo planning.
+\newblock In {\em Proceedings of the 17th European Conference on Machine
+  Learning}, ECML'06, pages 282--293, Berlin, Heidelberg. Springer-Verlag.
 
 \end{thebibliography}

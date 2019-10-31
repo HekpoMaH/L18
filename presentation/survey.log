@@ -1,0 +1,352 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.1.21)  31 OCT 2019 20:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**../survey.tex
+(../survey.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 7 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count87
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+No file survey.aux.
+\openout1 = `survey.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 12.
+
+LaTeX Warning: Reference `sec:background' on page 1 undefined on input line 21.
+
+
+
+LaTeX Warning: Reference `sec:ITP' on page 1 undefined on input line 22.
+
+
+LaTeX Warning: Reference `sec:ATP' on page 1 undefined on input line 24.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 1 undefined on input line 26.
+
+
+
+Package natbib Warning: Citation `LearningToProveITP' undefined on input line 2
+8.
+
+
+Package natbib Warning: Citation `DPLL' on page 1 undefined on input line 35.
+
+
+Package natbib Warning: Citation `HistoryITP' on page 1 undefined on input line
+ 44.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 46.
+
+Package natbib Warning: Citation `Eprover' on page 1 undefined on input line 49
+.
+
+
+Package natbib Warning: Citation `VAMPIRE' on page 1 undefined on input line 49
+.
+
+[1
+
+]
+
+Package natbib Warning: Citation `MizarOverview' on page 2 undefined on input l
+ine 69.
+
+
+Package natbib Warning: Citation `MizarProofAdvisor' on page 2 undefined on inp
+ut line 71.
+
+
+Package natbib Warning: Citation `MaLARea' on page 2 undefined on input line 78
+.
+
+
+Package natbib Warning: Citation `MizarProofAdvisor' on page 2 undefined on inp
+ut line 79.
+
+
+Package natbib Warning: Citation `MaLARea' on page 2 undefined on input line 83
+.
+
+
+Package natbib Warning: Citation `MaLARea' on page 2 undefined on input line 90
+.
+
+
+Package natbib Warning: Citation `MaLARea' on page 2 undefined on input line 94
+.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 96.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+
+
+Package natbib Warning: Citation `MaLAReaSG' on page 2 undefined on input line 
+96.
+
+
+Package natbib Warning: Citation `SRASS' on page 2 undefined on input line 97.
+
+
+Package natbib Warning: Citation `MaSh' on page 2 undefined on input line 99.
+
+
+Package natbib Warning: Citation `SNoW' on page 2 undefined on input line 109.
+
+[2]
+
+Package natbib Warning: Citation `FlyspeckProject' on page 3 undefined on input
+ line 111.
+
+
+Package natbib Warning: Citation `Flyspeck' on page 3 undefined on input line 1
+12.
+
+
+Package natbib Warning: Citation `Flyspeck' on page 3 undefined on input line 1
+17.
+
+
+Package natbib Warning: Citation `PremiseSelection' on page 3 undefined on inpu
+t line 129.
+
+
+Package natbib Warning: Citation `FlyspeckFeatW' on page 3 undefined on input l
+ine 133.
+
+
+Package natbib Warning: Citation `DeepMath' on page 3 undefined on input line 1
+39.
+
+
+Package natbib Warning: Citation `DeepMath' on page 3 undefined on input line 1
+49.
+
+
+Package natbib Warning: Citation `HolStep' on page 3 undefined on input line 15
+5.
+
+
+Package natbib Warning: Citation `HolStep' on page 3 undefined on input line 15
+8.
+
+[3]
+
+Package natbib Warning: Citation `DeepGraph' on page 4 undefined on input line 
+161.
+
+
+Package natbib Warning: Citation `GNNsForTP' on page 4 undefined on input line 
+161.
+
+
+Package natbib Warning: Citation `LearningToProveITP' on page 4 undefined on in
+put line 164.
+
+
+Package natbib Warning: Citation `GamePad' on page 4 undefined on input line 16
+4.
+
+
+LaTeX Warning: File `malecop_arch.png' not found on input line 178.
+
+
+! LaTeX Error: File `malecop_arch.png' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.178 ...cs[width=0.5\textwidth]{malecop_arch.png}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in malecop_arch.png (no Boundin
+gBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.178 ...cs[width=0.5\textwidth]{malecop_arch.png}
+                                                  
+? 
+File: malecop_arch.png Graphic file (type eps)
+<malecop_arch.png>
+
+Package natbib Warning: Citation `malecop' on page 4 undefined on input line 17
+9.
+
+
+Package natbib Warning: Citation `malecop' on page 4 undefined on input line 17
+9.
+
+
+Package natbib Warning: Citation `malecop' on page 4 undefined on input line 18
+3.
+
+
+LaTeX Warning: Reference `fig:malecop' on page 4 undefined on input line 191.
+
+[4]
+
+Package natbib Warning: Citation `leancop' on page 5 undefined on input line 20
+0.
+
+
+Package natbib Warning: Citation `SNoW' on page 5 undefined on input line 200.
+
+
+Package natbib Warning: Citation `femalecop' on page 5 undefined on input line 
+208.
+
+
+Package natbib Warning: Citation `femalecop' on page 5 undefined on input line 
+225.
+
+
+Package natbib Warning: Citation `femalecop' on page 5 undefined on input line 
+228.
+
+
+Package natbib Warning: Citation `Satallax' on page 5 undefined on input line 2
+30.
+
+
+Package natbib Warning: Citation `SatallaxProver' on page 5 undefined on input 
+line 231.
+
+
+Package natbib Warning: Citation `Enigma' on page 5 undefined on input line 234
+.
+
+
+Package natbib Warning: Citation `EFSF' on page 5 undefined on input line 236.
+
+
+Package natbib Warning: Citation `DeepMath' on page 5 undefined on input line 2
+42.
+
+
+Package natbib Warning: Citation `DNGPS' on page 5 undefined on input line 243.
+
+
+
+Package natbib Warning: Citation `DNGPS' on page 5 undefined on input line 249.
+
+
+
+Package natbib Warning: Citation `DNGPS' on page 5 undefined on input line 250.
+
+
+[5]
+
+Package natbib Warning: Citation `RLTP' on page 6 undefined on input line 261.
+
+
+Package natbib Warning: Citation `DRL' on page 6 undefined on input line 261.
+
+
+Package natbib Warning: Citation `GuidingTPbyRNNs' on page 6 undefined on input
+ line 261.
+
+
+Package natbib Warning: Citation `LearningToSelect' on page 6 undefined on inpu
+t line 276.
+
+
+Package natbib Warning: Citation `MaLeS' on page 6 undefined on input line 277.
+
+
+No file survey.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[6] (./survey.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 983 strings out of 494848
+ 11887 string characters out of 6179106
+ 64544 words of memory out of 5000000
+ 4352 multiletter control sequences out of 15000+600000
+ 8243 words of font info for 29 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 25i,8n,25p,794b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on survey.dvi (6 pages, 21292 bytes).
