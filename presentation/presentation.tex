@@ -185,11 +185,20 @@
 \section{Reinforcement Learning}
 
 \begin{frame}
-    \frametitle{Basics}
+    \frametitle{RL Basics}
+    \begin{columns}
+    \column{.7\textwidth}
     \begin{figure}
     \includegraphics[width=.7\linewidth]{RL_robot.png}
-    \caption{An agent has to reach a reward without burning\footnote{Source: GeeksForGeeks}}
+    \caption{An agent has to reach a reward without burning\footnotemark}
     \end{figure}
+    \column{.3\textwidth}
+    \begin{itemize}
+        \item policy learning
+        \item value learning
+    \end{itemize}
+    \end{columns}
+    \footnotetext[2]{Source: Geeks for Geeks}
 \end{frame}
 \subsection{Basics}
 
@@ -197,22 +206,28 @@
 \begin{frame}
     \frametitle{Application to ATP}
     RL to ATP mapping:
+    \begin{columns}
+    \column{.7\textwidth}
     \begin{itemize}
         \item agent $\leftrightarrow$ ATP
         \item environment $\leftrightarrow$ search tree
         \item actions $\leftrightarrow$ extending search tree
         \item reward $\leftrightarrow$ finding a closed tableau
     \end{itemize}
+    \column{.3\textwidth}
+    \begin{figure}
+    \includegraphics[width=\linewidth]{RL_robot.png}
+    \end{figure}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Application to ATP -- the UCT formula}
-    For each node $i$, we calculate the Upper Confidence bound applied to
-    Trees, i.e. UCT\citep{UCT}:
+    \frametitle{Application to ATP -- the formula}
+    Let's combine policy and value learning into a formula:
     \begin{columns}
     \column{.6\textwidth}
     \begin{equation*}
-        \frac{w_i}{n_i}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
+        f_i=\frac{w_i}{n_i}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
     \end{equation*}
     \column{.39\textwidth}
     \begin{itemize}
@@ -223,6 +238,8 @@
         \item $N_i$ -- total parent visits
     \end{itemize}
     \end{columns}
+
+    On every step, take the node with highest $f_i$.
     % Without any learning, all prior probabilities are equal and the values are
     % determined by the number of open goals.
 \end{frame}
@@ -240,11 +257,8 @@
                 \item E.g. $(=, f, \oast)$ occurs twice
             \end{itemize}
         \item Count the occurrences of each triple, create literal and clause feature vectors
-        \item Feature vector for each state contains:
-            \begin{itemize}
-                \item the triplet occurrence counts for each of its clauses and goals
-                \item additional metadata, e.g. number of goals, most common symbols, etc.
-            \end{itemize}
+
+        \item E.g. for L we get $\{(+, =, f): 1, (=, f, \oast):2\}$ 
     \end{itemize}
     \column{.2\textwidth}
     \begin{figure}
@@ -252,7 +266,7 @@
     \caption{Feature Tree}
     \end{figure}
     \end{columns}
-    \footnotetext[3]{Example from \cite{Enigma}}
+    \footnotetext[3]{Example and picture from \cite{Enigma}}
 
     % \textbf{Step 2:} Getting the data:
     %     \begin{itemize}
@@ -262,13 +276,26 @@
 \end{frame}
 \begin{frame}
     \frametitle{Application to ATP -- Learning the parameters}
+    \framesubtitle{\textbf{Step 1:} Extracting features}
+    Feature vector for each state contains:
+        \begin{itemize}
+            \item the triplet occurrence counts for each of its clauses and goals
+            \item additional metadata, e.g. number of open goals, most common symbols, etc.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Application to ATP -- Learning the parameters}
     \framesubtitle{\textbf{Steps 2\&3:} Data Extraction and Lerning}
     \begin{itemize}
-        \item Unrestricted ATP runs to accumulate (some) UCT proof data
+        \item Unrestricted ATP runs to accumulate (some) proof data
+        \begin{equation*}
+            f_i=\frac{w_i}{n_i}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
+        \end{equation*}
         \item Associate node state and action features 
             with action `relevance'
             \begin{itemize}
-                \item $\dfrac{total\ frequency\ of\ action}{action\ frequency\ at\ node}$
+                \item $\dfrac{total\ frequency\ of\ action\ A}{action\ A\ frequency\ at\ node}$
             \end{itemize}
         \item Associate node state feature with value
             \begin{itemize}

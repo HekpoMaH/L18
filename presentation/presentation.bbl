@@ -12,10 +12,4 @@ Jakubuv, J. and Urban, J. (2017).
   Conference, {CICM} 2017, Edinburgh, UK, July 17-21, 2017, Proceedings}, pages
   292--302.
 
-\bibitem[Kocsis and Szepesv\'{a}ri, 2006]{UCT}
-Kocsis, L. and Szepesv\'{a}ri, C. (2006).
-\newblock Bandit based monte-carlo planning.
-\newblock In {\em Proceedings of the 17th European Conference on Machine
-  Learning}, ECML'06, pages 282--293, Berlin, Heidelberg. Springer-Verlag.
-
 \end{thebibliography}

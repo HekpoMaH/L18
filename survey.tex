@@ -14,10 +14,12 @@
 
 Machine Learning (ML) has found its application in many areas (natural language
 processing, computer vision, etc) and it has succeeded in solving challenging
-tasks where classical deterministic approaches have performed poorly.
+tasks where classical deterministic approaches have performed poorly. ML was
+also successfully integrated into theorem proving, both interactive and
+automatic. 
 
 This survey focuses some of the ML techniques that have been applied for
-Theorem Proving in large scale problems. It is organised in three main parts:
+theorem proving. It is organised in three main parts:
 In section \ref{sec:background} I give a bit of background on theorem proving
 (both automated and interactive). In section \ref{sec:ITP} the focus falls on
 how ML is used in Interactive Theorem Proving and premise selection in
@@ -25,8 +27,7 @@ particular. Section \ref{sec:ATP} will investigate how ML can be used to guide
 Automated Theorem Provers to improve their performance. Section
 \ref{sec:conclusion} summarises the survey.
 
-\nocite{LearningToProveITP}
-
+% \nocite{LearningToProveITP}
 
 \section{Background}\label{sec:background}
 
@@ -38,7 +39,7 @@ have been developed. Such provers, however, have been unable to make use of
 high-level abstractions and reasoning that humans usually do, when developing
 a complex proof or theory.
 
-Proving complicated theorems in higher-order logic in a `one click' manner has
+Proving complicated theories in higher-order logic in a `one click' manner has
 turned out difficult to achieve and automate. Thus, a human factor has been
 integrated in the process of theorem proving and Interactive Theorem Provers
 (ITP) emerged \citep{HistoryITP}. In interactive theorem proving, users specify
@@ -87,7 +88,7 @@ a Bayes classifier and under a fixed time limit. If nothing new is proven, the
 axiom and time limits are increased. Upon a successful proof, they are reset to
 their minimal values again and the proof is `learned'. It was shown that with
 learning a `relevance filter', the number of problems that can be solved with
-an ATP has increased drastically (cf. Section 3 of \cite{MaLARea}) compared to
+an ATP has increased drastically (cf. \S 3 of \cite{MaLARea}) compared to
 passing all premises to the ATP.
 
 The policy outlined above has been reused in the future as well, signifying the
@@ -98,15 +99,13 @@ contribution of \cite{MaLARea}. Some of the examples follow:
         on semantic guidance).
     \item \textbf{MaSh} \cite{MaSh} employed it for improving Isabelle's
         Sledgehammer, which is a tool used for ATP proving of subgoals of
-        a theory in Isabelle.  As before, all current axioms are ranked,
-        a number of the top ranked ones are taken and ATPs are repeatedly
-        invoked with various fact number/time limits and successful proofs are
-        learnt. The differences to the previous work lie in how features of
-        premises/proofs are created and how everything integrates with the
-        ITP system being improved. Note that even the ML algorithm didn't
-        change a lot -- it is still a naive Bayes, but a custom
+        a theory in Isabelle. Similar loop policy is used \citep[p.3]{MaSh} as
+        well as the same algorithm -- still a naive Bayes, but a custom
         implementation, in order to improve performance (previous works used
-        off-the-shelf tool, such as SNoW \citep{SNoW}).
+        the off-the-shelf tool SNoW \citep{SNoW}).  A key difference to the
+        previous work lie in how features of premises/proofs are created --
+        instead of using simply the symbols, the nontrivial first-order
+        patterns up to a given depth are used \citep[p.6]{MaSh}.
     \item \textbf{Learning with Flyspeck } -- the policy was also applied to
         the Flyspeck project \citep{FlyspeckProject}. One of the key differences
         here are that \cite{Flyspeck} claim that translation to ATP formalisms
@@ -115,9 +114,9 @@ contribution of \cite{MaLARea}. Some of the examples follow:
         in several different ways. The motivation for a consistent translation
         is that external (heuristical) premise selection tools cannot be used
         otherwise and in their ranking scheme \cite{Flyspeck} use them as
-        a `preprocessing' step of the (re)learning loop. Other differences are
-        what features are used, how are these extracted, what is the learning
-        algorithm, etc.
+        a `preprocessing' step of the (re)learning loop. Features used here are
+        a variation of symbol preprocessing \citep[\S 4.1]{Flyspeck}, similar
+        to what \cite{MaLARea} have.
 \end{itemize}
 
 Research time has also been devoted to improving the ML methodology for
@@ -125,11 +124,10 @@ premise selection, since this is a key component of good performance,
 regardless whether we employ the aforementioned policy or not. Two of the
 methods that have been tested are:
 \begin{itemize}
-    \item \textbf{Kernel Methods} -- 
-        \cite{PremiseSelection} used a premise selection algorithm based on
-        kernel methods. The benefit is that such classifier can learn
-        non-linear dependencies (it was proved in the paper that NB can learn
-        only linear ones). 
+    \item \textbf{Kernel Methods} -- \cite{PremiseSelection} used a premise
+        selection algorithm based on kernel methods. The benefit is that such
+        classifier can learn non-linear dependencies (it was proved in the
+        paper that NB can learn only linear ones). 
     \item \textbf{k Nearest Neighbours (k-NNs)} -- \cite{FlyspeckFeatW} also
         showed that k-NNs with Inverse Document Frequency weighting of the
         features can give better results than naive Bayes. 
@@ -144,34 +142,35 @@ a premise which is known to be a true dependency (i.e. we know we cannot prove
 the conjecture without it). Many neural network models were tested, inspired
 both from Computer Vision and from Natural Language Processing. Results showed
 that the models can give better results than the baseline of k-NN with
-handcrafted features and in addition be ``complementary'', i.e. even better
+handcrafted features and in addition can be ``complementary'', i.e. even better
 results are obtained when the neural network and hand engineered approaches are
 combined -- 80\% of the problems used for testing were solved. \cite{DeepMath}
-were the first to apply Deep Learning to theorem proving for premise
-selection and presented how a variety of neural network models can be used for
-premise selection.
+were the first to apply Deep Learning to theorem proving for premise selection
+and presented how a variety of neural network models can be used for premise
+selection.
 
 The need for larger datasets was also identified. One such dataset is HolStep
 \citep{HolStep}, featuring 2M statements (axioms/proofs/etc.) and 10K
 conjectures making applying data hungry techniques like DL for premise
-selection\footnote{Some other similar tasks were also proposed in
-\cite{HolStep}} much easier.
+selection much easier. Other tasks together with baseline models \citep[\S 3,
+4]{HolStep} were also proposed. This dataset was used in training other models,
+e.g. the one from \cite{DeepGraph}.
+
 
 Currently, the state-of-the-art uses ML/DL approaches for premise selection
-(e.g. \cite{DeepGraph, GNNsForTP}). DL has also found use in generating full ITP
+(e.g. \cite{DeepGraph}). DL has also found use in generating full ITP
 tactics and the focus in the last year or so is more on end-to-end Interactive
 Theorem Proving proof generation, rather than only premise selection -- see
-\cite{LearningToProveITP, GamePad} for example.
+\cite{LearningToProveITP, GamePad, GNNsForTP} for example.
 
 \section{Guiding ATPs}\label{sec:ATP}
 
-As we saw in the last section, the approach of \emph{deduce, learn from it, and
-loop} policy gives a generic interface in which any ATP can be substituted
-and a variety of ML/DL approaches can be employed. Despite its success, this
-approach has the drawback that it uses the ATP as a black box -- it does not
-utilise the knowledge of successful proofs to guide the ATP itself. In this
-section I give a summary of some of the work done in using ML to guide an
-Automated Theorem Prover.
+As we saw in the last section, the approach of premise selection gives
+a generic interface in which any ATP can be substituted and a variety of ML/DL
+approaches can be employed. Despite its success, this approach has the drawback
+that it uses the ATP as a black box -- it does not utilise the knowledge of
+successful proofs to guide the ATP itself. In this section I give a summary of
+some of the work done in using ML to guide an Automated Theorem Prover.
 
 \begin{figure}[t]
     \centering
@@ -183,99 +182,92 @@ Automated Theorem Prover.
 \cite{malecop} proposed an `advisor' architecture to serve queries produced by
 the ATP and created a Machine Learning Connection Prover (MaLeCoP) which used
 ML to advise on the most useful clause for every extension step in a tableau
-proof. In a short overview, the queries usually consist of the current proof
-state (what is left to be proved/what we know/etc.) or training data (proof
-state with what steps lead to a prove and what don't). These queries would be
-translated to the format used by an external ML system and analysed by that
-system. The guidance of the system will then be translated back to the ATP.
-The whole system is depicted in Figure \ref{fig:malecop} -- \textbf{P}
+proof. The advisor system is depicted in Figure \ref{fig:malecop} -- \textbf{P}
 represents a prover, \textbf{A} the advisor system, \textbf{E} the external
 system. It can be noted that the idea of \emph{usefulness of axioms} is very
 similar to what MaLARea does, but here, the actual proof state is also taken
 into account and the advice is on what axioms are most useful for the next
 steps, rather than for the \emph{whole} proof.
 
-By substituting leanCoP, a connection tableau\footnote{A goal-oriented
-variation of tableau method for proving. See \cite{leancop} for more details on
-leanCoP} prover for \textbf{P}, SNoW \citep{SNoW} for \textbf{E} and
-a hand-implemented script for \textbf{A}, MaLeCoP was born. Evaluation showed
-that MaLeCoP can produce shorter by almost an order of magnitude proofs than
-those produced without using any ML but there was a very high overhead due
-to recomputing the features for similar states and the use of and communication
-to external ML system which made the system impractical.
+By substituting leanCoP \citep{leancop}, a connection tableaux prover for
+\textbf{P}, SNoW \citep{SNoW} for \textbf{E} and a hand-implemented script for
+\textbf{A}, MaLeCoP was born. Evaluation showed that MaLeCoP can produce
+shorter by almost an order of magnitude proofs than those produced without
+using any ML but there was a very high overhead due to recomputing the features
+for similar states and the use of and communication to external ML system which
+made the system impractical.
 
 Based on the ideas of the above prototype, the system was greatly improved
 \citep{femalecop}, making it both much faster than the prototype and better in
 generalisation (90 unseen problems were proved compared to 7). Some of the
 differences to MaLeCoP are:
 \begin{itemize}
-    \item \textbf{efficient (re)computation of the features and relevance
-        computation} -- the feature vector of the proof state (as well as
+    \item efficient (re)computation of the features and relevance
+        computation -- the feature vector of the proof state (as well as
         relevance scores) is updated incrementally on a tableau extension.
-        Although the features may be sometimes inaccurate due to substitutions
-        happening on a tableau extension this gives a significant speedup compared to
-        the previous prototype
+        % Although the features may be sometimes inaccurate due to substitutions
+        % happening on a tableau extension this gives a significant speedup compared to
+        % the previous prototype
     \item additional improvements on preprocessing the data and feature
         extraction, e.g. hash tables for faster accesses of the sum of
         occurences for a given features and more
     \item fast custom implementation of the ML advising system and its
-        integration directly in the leanCoP code to remove any communication
-        overhead
+        integration directly in the leanCoP code
+        % to remove any communication
+        % overhead
 \end{itemize}
 According to \cite{femalecop} and to the best of my knowledge, this was
 the first time ML was (successfully) used for internally guiding an ATP.
 
-The work of \cite{femalecop} inspired other works too:
-\begin{itemize}
-    \item \cite{Satallax} applied the approach to Satallax
-        \citep{SatallaxProver}, a clause algorithm based prover, one of the
-        main differences being the measuring of label occurrences and feature
-        engineering
-    \item \cite{Enigma} -- the experience from FEMaLeCoP was combined with
-        better feature engineering for the clauses\footnote{inspired from
-        \cite{EFSF}} and the learn loop from MaLARea. It is worth noting that
-        the methodology was \emph{applied to state-of-the-art ATP} (E) and
-        it \emph{resulted in practical improvement}
-\end{itemize}
+\nocite{SatallaxProver}
 
-The tediousness of creating hand engineered features and the success of
-applying Deep Learning to premise selection \citep{DeepMath} inspired
-\cite{DNGPS} to apply Deep Learning based guidance on an ATP. The E clause
-based prover was chosen for the experiments. The DL guidance consists of taking
-an unprocessed clause and the negated conjecture, embedding them and
-calculating the probability that the clause would prove the conjecture.
-Various architectures were tested but calculating the score for all clauses on
-every step was too expensive and pure DL-based score was not practical. Thus,
-\cite{DNGPS} employed hybrid approaches, the most prominent being
-a \emph{switched approach} \cite[s. 5.2.1, p.10]{DNGPS}, which would initially
-use DL guidance but then would switch to E's heuristics, when resources start
-running out. The motivation behind this choice is that learning based guidance
-is more useful when there is a lot of possible choices for the next step, while
-the current heuristics perform well enough when the set of options is smaller.
-Experiments performed showed that not only DL guidance can boost the ATP
-performance, but it can also lead to proofs of statements which have never been
-proved by this or another ATP.
+The promising results of \cite{femalecop} inspired other works too and it was
+applied to other ATPs as well, such as Satallax \citep{Satallax}. However it
+was not until the work of \cite{Enigma} that ML was used for guiding an
+\emph{state-of-the-art} ATP. This was achieved via efficient feature extraction
+(term walks of length 3 \citep[\S 3.2]{Enigma}) and then utilising a large-scale
+linear classifier. \cite{Enigma} again guided on the premise selection on every
+ATP step, and reused the concept of the feedback loop from MaLARea
+\citep{MaLARea}.
 
-Currently, research focuses on engineering various deep and reinforcement
-learning techniques into ATPs, which have already successfully been applied in
-other fields -- see \cite{RLTP, DRL, GuidingTPbyRNNs}. 
+Reinforcement Learning algorithms have also been utilised. \cite{RLTP} showed that
+it is possible to apply policy and value learning algorithms to guide
+leanCoP. Although features were extracted in the same
+hand-engineered way as \cite{Enigma}, results were very promising -- 40\% more
+proofs were obtained, compared to the original prover.
+
+The tediousness of engineering feature extraction and the success of applying
+Deep Learning to premise selection \citep{DeepMath} inspired \cite{DNGPS} to
+apply Deep Learning based guidance on an ATP. The E clause based prover was
+chosen for the experiments. The DL guidance consists of taking an unprocessed
+clause and the negated conjecture, embedding them and calculating the
+probability that the clause would be used for proving the conjecture. Since
+calculating the score for all clauses on every step was too expensive and pure
+DL-based score was not practical hybrid approaches were proposed \citep[\S
+5.2.1]{DNGPS}, which would initially use DL guidance but then would switch to
+the ATP heuristics, when resources start running out. T
+
+Given the success of the last two papers, current research mainly focuses on
+using RL and DL \citep{GuidingTPbyRNNs,TowardsLonger}, but the exact
+approach taken can vary between the papers, depending on the particular problem
+identified and its solution.
 
 \section{Conclusion}\label{sec:conclusion}
 
-This assignment surveyed two of the most common applications of ML to theorem
-proving -- premise selection (usually associated with interactive theorem
-provers) and internal guidance of automated theorem provers in the presence of
-large theories. In both cases, learning has been especially beneficial when it
-was used for filtering the number of `step possibilities' (either the premises
-to use in ITP or the next proof step in ATP). Due to the emerge of more
-advanced techniques, such as deep learning, and to the inherent difficulty of
-feature engineering, research has moved to using neural networks to learn the
-embeddings of the conjectures/premises and how these correlate.
+This assignment surveyed the two main applications of ML to theorem proving --
+premise selection (usually associated with interactive theorem provers) and
+internal guidance of automated theorem provers in the presence of large
+theories. In both cases, that machine learning has been was used for filtering
+the number of `step possibilities' (either the premises to use in ITP or the
+next proof step in ATP). It was observed that the applied algorithms/techniques
+are advantageous and can even lead to proofs which were impossible to prove
+before with using heuristics for guiding the ATP.
 
-It has to be noted that there are also other applications of ML related to
-theorem proving, e.g. choosing a prover heuristic \citep{LearningToSelect} or
-tuning prover's parameters \citep{MaLeS}, but these do not fall in the scope of
-this survey\footnote{As agreed with the lecturer}.
+Due to the emerge of more advanced techniques, such as deep learning, and to
+the inherent difficulty of feature engineering, research has moved to using
+neural networks to learn the embeddings of the conjectures/premises and how
+these correlate. Despite that neural networks can be more computationally
+expensive, when utilised correctly they could give even better results.
 
 % \cite{FuchsGenetic} -- heuristic learned to be chosen with Gen Algo
 

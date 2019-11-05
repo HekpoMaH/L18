@@ -3,8 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: survey.aux
 The style file: apalike.bst
 Database file #1: refs.bib.bib
-A bad cross reference---entry "LearningToProveITP"
-refers to entry "DBLP:conf/icml/2019", which doesn't exist
 A bad cross reference---entry "HistoryITP"
 refers to entry "DBLP:series/hhl/9", which doesn't exist
 A bad cross reference---entry "MizarOverview"
@@ -21,24 +19,24 @@ A bad cross reference---entry "HolStep"
 refers to entry "DBLP:conf/iclr/2017", which doesn't exist
 A bad cross reference---entry "DeepGraph"
 refers to entry "DBLP:conf/nips/2017", which doesn't exist
+A bad cross reference---entry "LearningToProveITP"
+refers to entry "DBLP:conf/icml/2019", which doesn't exist
 A bad cross reference---entry "GamePad"
 refers to entry "DBLP:conf/iclr/2019", which doesn't exist
 A bad cross reference---entry "malecop"
 refers to entry "DBLP:conf/tableaux/2011", which doesn't exist
 A bad cross reference---entry "femalecop"
 refers to entry "DBLP:conf/lpar/2015", which doesn't exist
-A bad cross reference---entry "Satallax"
-refers to entry "DBLP:conf/cade/2016", which doesn't exist
 A bad cross reference---entry "SatallaxProver"
 refers to entry "DBLP:conf/cade/2012", which doesn't exist
+A bad cross reference---entry "Satallax"
+refers to entry "DBLP:conf/cade/2016", which doesn't exist
 A bad cross reference---entry "Enigma"
 refers to entry "DBLP:conf/mkm/2017", which doesn't exist
-A bad cross reference---entry "EFSF"
-refers to entry "DBLP:conf/ijcai/2015", which doesn't exist
-A bad cross reference---entry "DNGPS"
-refers to entry "DBLP:conf/lpar/2017", which doesn't exist
 A bad cross reference---entry "RLTP"
 refers to entry "DBLP:conf/nips/2018", which doesn't exist
+A bad cross reference---entry "DNGPS"
+refers to entry "DBLP:conf/lpar/2017", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/cade/2007esarlt"
 Warning--I didn't find a database entry for "DBLP:conf/nips/2018"
 Warning--I didn't find a database entry for "DBLP:conf/lpar/2017"
@@ -56,46 +54,45 @@ Warning--I didn't find a database entry for "DBLP:series/hhl/9"
 Warning--I didn't find a database entry for "DBLP:conf/tphol/2009"
 Warning--I didn't find a database entry for "DBLP:conf/cade/2012"
 Warning--I didn't find a database entry for "DBLP:conf/mkm/2017"
-Warning--I didn't find a database entry for "DBLP:conf/ijcai/2015"
-You've used 34 entries,
+You've used 31 entries,
             1935 wiz_defined-function locations,
-            730 strings with 11557 characters,
-and the built_in function-call counts, 15725 in all, are:
-= -- 1588
-> -- 589
-< -- 34
-+ -- 200
-- -- 194
-* -- 1214
-:= -- 2532
-add.period$ -- 104
-call.type$ -- 34
-change.case$ -- 265
-chr.to.int$ -- 34
-cite$ -- 34
-duplicate$ -- 699
-empty$ -- 1160
-format.name$ -- 252
-if$ -- 3270
+            711 strings with 10936 characters,
+and the built_in function-call counts, 14378 in all, are:
+= -- 1446
+> -- 550
+< -- 32
++ -- 188
+- -- 182
+* -- 1104
+:= -- 2319
+add.period$ -- 95
+call.type$ -- 31
+change.case$ -- 244
+chr.to.int$ -- 31
+cite$ -- 31
+duplicate$ -- 642
+empty$ -- 1056
+format.name$ -- 235
+if$ -- 2991
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 33
-newline$ -- 173
-num.names$ -- 106
-pop$ -- 305
+missing$ -- 30
+newline$ -- 158
+num.names$ -- 97
+pop$ -- 285
 preamble$ -- 1
-purify$ -- 264
+purify$ -- 243
 quote$ -- 0
-skip$ -- 529
+skip$ -- 484
 stack$ -- 0
-substring$ -- 1131
-swap$ -- 180
-text.length$ -- 17
+substring$ -- 1008
+swap$ -- 166
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 204
+type$ -- 186
 warning$ -- 0
-while$ -- 134
+while$ -- 121
 width$ -- 0
-write$ -- 444
-(There were 18 error messages)
+write$ -- 405
+(There were 17 error messages)

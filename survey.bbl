@@ -15,12 +15,6 @@ Alemi, A.~A., Irving, G., Szegedy, C., E{\'{e}}n, N., Chollet, F., and Urban,
   Conference on Neural Information Processing Systems 2016, December 5-10,
   2016, Barcelona, Spain}, pages 2235--2243.
 
-\bibitem[Bridge et~al., 2014]{LearningToSelect}
-Bridge, J.~P., Holden, S.~B., and Paulson, L.~C. (2014).
-\newblock Machine learning for first-order theorem proving - learning to select
-  a good heuristic.
-\newblock {\em J. Autom. Reasoning}, 53(2):141--172.
-
 \bibitem[Brown, 2012]{SatallaxProver}
 Brown, C.~E. (2012).
 \newblock Satallax: An automatic higher-order prover.
@@ -105,30 +99,10 @@ Kaliszyk, C., Urban, J., Michalewski, H., and Ols{\'{a}}k, M. (2018).
   Conference on Neural Information Processing Systems 2018, NeurIPS 2018, 3-8
   December 2018, Montr{\'{e}}al, Canada.}, pages 8836--8847.
 
-\bibitem[Kaliszyk et~al., 2015]{EFSF}
-Kaliszyk, C., Urban, J., and Vyskocil, J. (2015).
-\newblock Efficient semantic features for automated reasoning over large
-  theories.
-\newblock In {\em Proceedings of the Twenty-Fourth International Joint
-  Conference on Artificial Intelligence, {IJCAI} 2015, Buenos Aires, Argentina,
-  July 25-31, 2015}, pages 3084--3090.
-
 \bibitem[K{\"u}hlwein et~al., 2013]{MaSh}
 K{\"u}hlwein, D., Blanchette, J.~C., Kaliszyk, C., and Urban, J. (2013).
 \newblock Ma{Sh}: {M}achine {L}earning for {S}ledgehammer.
 \newblock In {\em ITP}.
-
-\bibitem[K{\"{u}}hlwein and Urban, 2015]{MaLeS}
-K{\"{u}}hlwein, D. and Urban, J. (2015).
-\newblock {MaLeS}: {A} framework for automatic tuning of automated theorem
-  provers.
-\newblock {\em J. Autom. Reasoning}, 55(2):91--116.
-
-\bibitem[Lederman et~al., 2018]{DRL}
-Lederman, G., Rabe, M.~N., and Seshia, S.~A. (2018).
-\newblock Learning heuristics for automated reasoning through deep
-  reinforcement learning.
-\newblock {\em CoRR}, abs/1807.08058.
 
 \bibitem[Loos et~al., 2017]{DNGPS}
 Loos, S.~M., Irving, G., Szegedy, C., and Kaliszyk, C. (2017).
@@ -216,5 +190,11 @@ Yang, K. and Deng, J. (2019).
 \newblock In {\em Proceedings of the 36th International Conference on Machine
   Learning, {ICML} 2019, 9-15 June 2019, Long Beach, California, {USA}}, pages
   6984--6994.
+
+\bibitem[Zombori et~al., 2019]{TowardsLonger}
+Zombori, Z., Csisz{\'{a}}rik, A., Michalewski, H., Kaliszyk, C., and Urban, J.
+  (2019).
+\newblock Towards finding longer proofs.
+\newblock {\em CoRR}, abs/1905.13100.
 
 \end{thebibliography}
