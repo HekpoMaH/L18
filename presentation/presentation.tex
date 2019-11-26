@@ -1,7 +1,9 @@
 \documentclass{beamer}
+\usepackage{amssymb}
 \usepackage{subcaption}
 \usepackage{natbib}
 \usepackage{tikz}
+\usepackage{pdfpcnotes}
 \usepackage{tikz-qtree}
 \usepackage{mathtools}
 \usepackage{textpos}
@@ -9,7 +11,8 @@
 \newcommand\oast{\stackMath\mathbin{\stackinset{c}{0ex}{c}{0ex}{\ast}{\bigcirc}}}
 %\usepackage{pifont}
 \newcommand{\smallspace}{\hspace{1mm}}
-\setbeamercolor{alerted text}{fg=blue}
+% \definecolor{macolor}{rgb}{1.0, 0.3, 0.1}
+% \setbeamercolor{alerted text}{fg=macolor}
 
 \graphicspath{{./images/}}
 \mode<presentation> {
@@ -31,7 +34,7 @@
 % \usecolortheme{wolverine}
 
 % \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-% \setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
@@ -50,7 +53,18 @@
 %{
 %\textit{dgg30@cam.ac.uk.com} % Your email address
 %}
-%\date{} % Date, can be changed to a custom date
+\date{} % Date, can be changed to a custom date
+\author{{\footnotesize a paper by}\\\textit{Cezary Kaliszyk, Josef Urban,
+Henryk Michalewski and Miroslav Ol\v{s}{\'{a}}k}\\~\\{\footnotesize
+presented by}\\\textit{Dobrik Georgiev}}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    % \frametitle{Outline for section \thesection}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 
 \begin{document}
 
@@ -66,10 +80,63 @@
 
 \begin{frame}
     \frametitle{How tableau provers work}
-    \begin{figure}
-    \includegraphics[width=\linewidth]{tableaux.png}
-    \caption{The search tree of a tableau based ATP\footnote{Source: Wikipedia}}
-    \end{figure}
+    \only<1-2>{
+    \begin{columns}
+        \column{.45\textwidth}
+        \small
+        Clauses:
+        \begin{itemize}
+            \item[$c_1$]: $P(X)$
+            \item[$c_2$]: $R(X, Y) \lor \neg P(X) \lor Q(Y)$
+            \item[$c_3$]: $S(X)\lor \neg Q(b)$
+            \item[$c_4$]: $\neg S(X)\lor \neg Q(X)$
+            \item[$c_5$]: $\neg Q(X)\lor \neg R(a, X)$
+            \item[$c_6$]: $\neg R(a, X)\lor Q(X)$
+        \end{itemize}
+        \pause
+        \column{.60\textwidth}
+            \centering
+            \begin{figure}
+            \caption{A closed tableau}
+            \begin{tikzpicture}[scale=0.69]
+            \tikzset{level 1/.style={level distance=40pt}}
+            % \tikzset{level 2/.style={level distance=40pt}}
+            % \tikzset{level 3/.style={level distance=40pt}}
+            % \tikzset{edge from parent/.append style{very thick}}
+            \tikzset{sibling distance=1mm}
+            \Tree
+            [.$P(a)$
+                [.$R(a,b)$
+                    [.$\neg R(a,b)$ ]
+                    [.$Q(b)$
+                        [.$\neg Q(b)$ ]
+                        [.$\neg R(a,b)$ ]
+                    ]
+                ] 
+                [.$\neg P(a)$ ] 
+                [.$Q(q)$
+                    [.$S(b)$
+                        [.$\neg S(b)$ ]
+                        [.$\neg Q(b)$ ]
+                    ]
+                    [.$\neg Q(b)$ ]
+                ] 
+            ]
+            \end{tikzpicture}
+            \end{figure}
+    \end{columns}
+    }
+    \only<3>{
+        \begin{figure}
+        \includegraphics[width=\linewidth]{tableaux.png}
+        \caption{The search tree of a (non-connection) tableau based TP}
+        \end{figure}
+    }
+
+    % \begin{figure}
+    % \includegraphics[width=\linewidth]{tableaux.png}
+    % \caption{The search tree of a tableau based TP\footnote{Source: Wikipedia}}
+    % \end{figure}
 
 \end{frame}
 % \begin{frame}
@@ -182,15 +249,17 @@
 
 % \subsection{Searching for a Closed Tableau}
 
-\section{Reinforcement Learning}
+\section{Reinforcement Learning and Application to TP}
 
 \begin{frame}
     \frametitle{RL Basics}
     \begin{columns}
     \column{.7\textwidth}
     \begin{figure}
-    \includegraphics[width=.7\linewidth]{RL_robot.png}
-    \caption{An agent has to reach a reward without burning\footnotemark}
+        \begin{tikzpicture}
+            \node[anchor=south, inner sep=0] (image) at (0, 0) {\includegraphics[width=\linewidth]{RL_robot.png}};
+        \end{tikzpicture}
+    \caption{An agent has to reach a reward without burning}
     \end{figure}
     \column{.3\textwidth}
     \begin{itemize}
@@ -198,18 +267,17 @@
         \item value learning
     \end{itemize}
     \end{columns}
-    \footnotetext[2]{Source: Geeks for Geeks}
 \end{frame}
 \subsection{Basics}
 
-\subsection{Application to ATP}
+\subsection{Application to TP}
 \begin{frame}
-    \frametitle{Application to ATP}
-    RL to ATP mapping:
+    \frametitle{Application to TP}
+    RL to TP mapping:
     \begin{columns}
     \column{.7\textwidth}
     \begin{itemize}
-        \item agent $\leftrightarrow$ ATP
+        \item agent $\leftrightarrow$ TP
         \item environment $\leftrightarrow$ search tree
         \item actions $\leftrightarrow$ extending search tree
         \item reward $\leftrightarrow$ finding a closed tableau
@@ -222,20 +290,35 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Application to ATP -- the formula}
-    Let's combine policy and value learning into a formula:
+    \frametitle{Application to TP -- the UCT formula}
+    Tree search with RL -- use the UCT formula!\\
+    For each node $i$:
     \begin{columns}
-    \column{.6\textwidth}
-    \begin{equation*}
-        f_i=\frac{w_i}{n_i}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
-    \end{equation*}
-    \column{.39\textwidth}
+        \centering
+    \column{.69\textwidth}
+    \only<1>{
+        \begin{equation*}
+            f_i=\frac{w_i}{n_i}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
+        \end{equation*}
+    }
+    \only<2>{
+        \begin{equation*}
+            f_i=\alert{\frac{w_i}{n_i}}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
+        \end{equation*}
+    }
+    \only<3>{
+        \begin{equation*}
+            f_i=\frac{w_i}{n_i}+\alert{c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}}
+        \end{equation*}
+    }
+    \column{.40\textwidth}
     \begin{itemize}
-        \item \alert{$w_i$ -- total reward}
-        \item $n_i$ -- number of visits
-        \item $c$ -- hyperparameter
-        \item \alert{$p_i$ -- prior probability}
-        \item $N_i$ -- total parent visits
+        \small
+        \item[$w_i$:] \textbf{total reward}
+        \item[$n_i$:] number node of visits
+        \item[$c$:] hyperparameter
+        \item[$p_i$:] \textbf{prior probability}
+        \item[$N_i$:] total parent visits
     \end{itemize}
     \end{columns}
 
@@ -245,25 +328,19 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Application to ATP -- Learning the parameters}
-    \framesubtitle{\textbf{Step 1:} Extracting features}
+    \frametitle{Application to TP -- Extracting features (Literals)}
     \begin{columns}
     \column{.7\textwidth}
-    For each Literal $L$, e.g. $f(X, Y) = g(sk_1, sk_2(x))$ \footnotemark
     \begin{itemize}
-        \item Build it's \alert{feature tree}
-        \item Count the \alert{term walks} of length 3
-            \begin{itemize}
-                \item E.g. $(=, f, \oast)$ occurs twice
-            \end{itemize}
-        \item Count the occurrences of each triple, create literal and clause feature vectors
-
-        \item E.g. for L we get $\{(+, =, f): 1, (=, f, \oast):2\}$ 
+        \item For each Literal $L$, e.g. $f(X, Y) = g(sk_1, sk_2(X))$
+        \item Build it's feature tree
+        \item Count term walks of length 3
+        \item E.g. for L we get {\small$\{(\oplus, =, f): 1, (=, f, \oast):2, ...\}$}
     \end{itemize}
     \column{.2\textwidth}
     \begin{figure}
     \includegraphics[width=\textwidth]{AST.png}
-    \caption{Feature Tree}
+    \caption{Feature Tree for $L$}
     \end{figure}
     \end{columns}
     \footnotetext[3]{Example and picture from \cite{Enigma}}
@@ -274,35 +351,44 @@
     %         \item 
     %     \end{itemize}
 \end{frame}
+
 \begin{frame}
-    \frametitle{Application to ATP -- Learning the parameters}
-    \framesubtitle{\textbf{Step 1:} Extracting features}
-    Feature vector for each state contains:
-        \begin{itemize}
-            \item the triplet occurrence counts for each of its clauses and goals
-            \item additional metadata, e.g. number of open goals, most common symbols, etc.
-        \end{itemize}
+    \frametitle{Application to TP -- Extracting features}
+    \begin{itemize}
+        \item Features for a \emph{clause} -- union of features for literals
+        \pause
+        \item Feature vector for a \emph{state}:
+            \begin{itemize}
+                \item Features of clauses and goals
+                \item additional metadata -- \# of open goals, depth of node, etc.
+            \end{itemize}
+        \pause
+        \item Features for an \emph{action} contains:
+            \begin{itemize}
+                \item features of the clause used
+                \item features of literal used
+            \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Application to ATP -- Learning the parameters}
-    \framesubtitle{\textbf{Steps 2\&3:} Data Extraction and Lerning}
+    \frametitle{Application to TP -- Learning the parameters}
     \begin{itemize}
-        \item Unrestricted ATP runs to accumulate (some) proof data
+        \item Start with unrestricted Monte-Carlo TP runs:
         \begin{equation*}
             f_i=\frac{w_i}{n_i}+c\cdot p_i \cdot \sqrt{\frac{\ln N_i}{n_i}}
         \end{equation*}
-        \item Associate node state and action features 
-            with action `relevance'
+        \item<2-> Learn action $a$ relevance given $f_s$ and $f_a$
             \begin{itemize}
-                \item $\dfrac{total\ frequency\ of\ action\ A}{action\ A\ frequency\ at\ node}$
+                \item $r_a=$ how often $a$ occurs at $i$
+                \item $p_i=softmax(r_a, R)$ 
             \end{itemize}
-        \item Associate node state feature with value
+        \item<3-> Associate node state feature with value
             \begin{itemize}
                 \item 0 if node not a proof
                 \item $0.99^{proof\ depth}$ otherwise
             \end{itemize}
-        \item Apply regression on the logits to learn `relevance' and value
+        \item<3-> Apply regression on the logits to learn prior probability and value
     \end{itemize}
 \end{frame}
 

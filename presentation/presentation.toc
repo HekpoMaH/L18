@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{How tableau provers work}{3}{0}{1}
-\beamer@sectionintoc {2}{Reinforcement Learning}{4}{0}{2}
-\beamer@subsectionintoc {2}{1}{Basics}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{Application to ATP}{5}{0}{2}
-\beamer@subsectionintoc {2}{3}{Results}{10}{0}{2}
-\beamer@sectionintoc {3}{Summary}{11}{0}{3}
+\beamer@sectionintoc {2}{Reinforcement Learning and Application to TP}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Basics}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Application to TP}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{Results}{20}{0}{2}
+\beamer@sectionintoc {3}{Summary}{21}{0}{3}
