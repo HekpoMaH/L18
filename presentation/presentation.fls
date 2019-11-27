@@ -379,9 +379,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssi8.tfm
-INPUT ./images/tableaux.png
-INPUT ./images/tableaux.png
-INPUT ./images/tableaux.png
 INPUT presentation.toc
 INPUT presentation.toc
 INPUT ./images/RL_robot.png

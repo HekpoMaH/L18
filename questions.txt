@@ -1,0 +1,6 @@
+Concept-net -- adversarial examples?
+LTL -- less expressive than, e.g. predicate logic?
+Proofs are programs -- where does prolog fit in?
+Multi-Hop KG reasoning -- is non-RL solution possible? has sb attempted it?
+Separation logic -- 1) does it help proving properties of concurrency programs, 2) any language that uses separation logic
+combining TP with NLP -- does (and how) the system cope with `negation' questions or underspecified questions?

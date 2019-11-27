@@ -126,12 +126,12 @@ presented by}\\\textit{Dobrik Georgiev}}
             \end{figure}
     \end{columns}
     }
-    \only<3>{
-        \begin{figure}
-        \includegraphics[width=\linewidth]{tableaux.png}
-        \caption{The search tree of a (non-connection) tableau based TP}
-        \end{figure}
-    }
+    % \only<3>{
+    %     \begin{figure}
+    %     \includegraphics[width=\linewidth]{tableaux.png}
+    %     \caption{The search tree of a (non-connection) tableau based TP}
+    %     \end{figure}
+    % }
 
     % \begin{figure}
     % \includegraphics[width=\linewidth]{tableaux.png}
@@ -348,7 +348,7 @@ presented by}\\\textit{Dobrik Georgiev}}
         \item Feature vector for a \emph{state}:
             \begin{itemize}
                 \item Features of clauses and goals
-                \item additional metadata -- \# of open goals, depth of node, etc.
+                \item additional metadata -- No. of open goals, depth of node, etc.
             \end{itemize}
         \pause
         \item Features for an \emph{action} contains:
@@ -368,7 +368,8 @@ presented by}\\\textit{Dobrik Georgiev}}
         \end{equation*}
         \item<2-> Learn action $a$ relevance given $f_s$ and $f_a$
             \begin{itemize}
-                \item $r_a=$ how often $a$ occurs at $i$
+                \item $r_a=\dfrac{overal\ frequency\ of\ a}{action\ frequency\ at\ node}$ 
+                \item $r_a \in (0, \infty)$
                 \item $p_i=softmax(r_a, R)$ 
             \end{itemize}
         \item<3-> Associate node state feature with value
@@ -376,7 +377,8 @@ presented by}\\\textit{Dobrik Georgiev}}
                 \item 0 if node not a proof
                 \item $0.99^{proof\ depth}$ otherwise
             \end{itemize}
-        \item<3-> Apply regression on the logits to learn prior probability and value
+        \item<4-> Apply regression on the logits to learn prior probability and value
+        \item<4-> \textbf{Deduce}, \textbf{Learn} from it, and \textbf{Loop}
     \end{itemize}
 \end{frame}
 
@@ -384,25 +386,30 @@ presented by}\\\textit{Dobrik Georgiev}}
 
 \begin{frame}
 \frametitle{Results}
-Results from 2003 problems of the Mizar Mathematical Library \citep{MML} with
-limit of $2\times10^6$ inferences.
+\begin{itemize}
+    \item 90\%-10\% split on the Mizar Mathematical Library \citep{MML} .
+    \item training set is $\approx 30K$ problems, testing -- $\approx 3.2K$
+\end{itemize}
 \begin{table}
-\begin{tabular}{l l l l l l}
+\begin{tabular}{l l l l l}
 \toprule
-Iteration & 1 & 5 & 10 & 15 & 20 \\
-Proved & 1037 & 1182 & 1210 & 1223 & 1235 \\
+Iteration & 1 & 2 & 5 & 8 \\
+Training Proved & 12325 & 13749 & 14403 & 14498\\
+Testing Proved & 1354 &  1519 & 1624 & 1591\\
 \bottomrule
 \end{tabular}
 \caption{Proved problems per iterations of learning}
 \end{table}
 
+\pause
 \begin{table}
 \begin{tabular}{l l l}
 \toprule
 \textbf{Methodology} & \textbf{Proved} & \textbf{IPS} \\
 \midrule
-Heuristics & 876 & 64K \\
-RL & 1235 & 16K \\
+Heuristics tableaux & 1143 & 64K \\
+RL tableaux & 1624 & 16K \\
+
 \bottomrule
 \end{tabular}
 \caption{Using RL gives 40\% more proves but slows down the inference speed}
@@ -414,9 +421,9 @@ RL & 1235 & 16K \\
 \begin{frame}
 \frametitle{Summary}
 \begin{itemize}
-    \item Reinforcement Learning can be applied to tableau based provers
-    \item Many new problems solved
-    \item RL (and ML methods in general) slow down provers
+    \item ML (RL) application on Theorem Provers
+    \item Helps `discover' new proofs!
+    \item ... but slows down inference speed
 \end{itemize}
 
 \end{frame}
