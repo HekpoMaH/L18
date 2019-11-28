@@ -80,7 +80,7 @@ presented by}\\\textit{Dobrik Georgiev}}
 
 \begin{frame}
     \frametitle{How tableau provers work}
-    \only<1-2>{
+    \only<1-1>{
     \begin{columns}
         \column{.45\textwidth}
         \small
@@ -93,7 +93,7 @@ presented by}\\\textit{Dobrik Georgiev}}
             \item[$c_5$]: $\neg Q(X)\lor \neg R(a, X)$
             \item[$c_6$]: $\neg R(a, X)\lor Q(X)$
         \end{itemize}
-        \pause
+        % \pause
         \column{.60\textwidth}
             \centering
             \begin{figure}
@@ -284,7 +284,8 @@ presented by}\\\textit{Dobrik Georgiev}}
     \end{itemize}
     \column{.3\textwidth}
     \begin{figure}
-    \includegraphics[width=\linewidth]{RL_robot.png}
+    \centering
+    \includegraphics[width=\textwidth]{RL_robot.png}
     \end{figure}
     \end{columns}
 \end{frame}
@@ -331,7 +332,7 @@ presented by}\\\textit{Dobrik Georgiev}}
     \caption{Feature Tree for $L$}
     \end{figure}
     \end{columns}
-    \footnotetext[3]{Example and picture from \cite{Enigma}}
+    \let\thefootnote\relax\footnotetext{Example and picture from \cite{Enigma}}
 
     % \textbf{Step 2:} Getting the data:
     %     \begin{itemize}
