@@ -76,62 +76,62 @@ presented by}\\\textit{Dobrik Georgiev}}
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
-\section{How tableau provers work} 
+\section{How tableau provers search} 
 
 \begin{frame}
-    \frametitle{How tableau provers work}
-    \only<1-1>{
-    \begin{columns}
-        \column{.45\textwidth}
-        \small
-        Clauses:
-        \begin{itemize}
-            \item[$c_1$]: $P(X)$
-            \item[$c_2$]: $R(X, Y) \lor \neg P(X) \lor Q(Y)$
-            \item[$c_3$]: $S(X)\lor \neg Q(b)$
-            \item[$c_4$]: $\neg S(X)\lor \neg Q(X)$
-            \item[$c_5$]: $\neg Q(X)\lor \neg R(a, X)$
-            \item[$c_6$]: $\neg R(a, X)\lor Q(X)$
-        \end{itemize}
-        % \pause
-        \column{.60\textwidth}
-            \centering
-            \begin{figure}
-            \caption{A closed tableau}
-            \begin{tikzpicture}[scale=0.69]
-            \tikzset{level 1/.style={level distance=40pt}}
-            % \tikzset{level 2/.style={level distance=40pt}}
-            % \tikzset{level 3/.style={level distance=40pt}}
-            % \tikzset{edge from parent/.append style{very thick}}
-            \tikzset{sibling distance=1mm}
-            \Tree
-            [.$P(a)$
-                [.$R(a,b)$
-                    [.$\neg R(a,b)$ ]
-                    [.$Q(b)$
-                        [.$\neg Q(b)$ ]
-                        [.$\neg R(a,b)$ ]
-                    ]
-                ] 
-                [.$\neg P(a)$ ] 
-                [.$Q(q)$
-                    [.$S(b)$
-                        [.$\neg S(b)$ ]
-                        [.$\neg Q(b)$ ]
-                    ]
-                    [.$\neg Q(b)$ ]
-                ] 
-            ]
-            \end{tikzpicture}
-            \end{figure}
-    \end{columns}
-    }
-    % \only<3>{
-    %     \begin{figure}
-    %     \includegraphics[width=\linewidth]{tableaux.png}
-    %     \caption{The search tree of a (non-connection) tableau based TP}
-    %     \end{figure}
+    \frametitle{How tableau provers search}
+    % \only<1-1>{
+    % \begin{columns}
+    %     \column{.45\textwidth}
+    %     \small
+    %     Clauses:
+    %     \begin{itemize}
+    %         \item[$c_1$]: $P(X)$
+    %         \item[$c_2$]: $R(X, Y) \lor \neg P(X) \lor Q(Y)$
+    %         \item[$c_3$]: $S(X)\lor \neg Q(b)$
+    %         \item[$c_4$]: $\neg S(X)\lor \neg Q(X)$
+    %         \item[$c_5$]: $\neg Q(X)\lor \neg R(a, X)$
+    %         \item[$c_6$]: $\neg R(a, X)\lor Q(X)$
+    %     \end{itemize}
+    %     % \pause
+    %     \column{.60\textwidth}
+    %         \centering
+    %         \begin{figure}
+    %         \caption{A closed tableau}
+    %         \begin{tikzpicture}[scale=0.69]
+    %         \tikzset{level 1/.style={level distance=40pt}}
+    %         % \tikzset{level 2/.style={level distance=40pt}}
+    %         % \tikzset{level 3/.style={level distance=40pt}}
+    %         % \tikzset{edge from parent/.append style{very thick}}
+    %         \tikzset{sibling distance=1mm}
+    %         \Tree
+    %         [.$P(a)$
+    %             [.$R(a,b)$
+    %                 [.$\neg R(a,b)$ ]
+    %                 [.$Q(b)$
+    %                     [.$\neg Q(b)$ ]
+    %                     [.$\neg R(a,b)$ ]
+    %                 ]
+    %             ] 
+    %             [.$\neg P(a)$ ] 
+    %             [.$Q(q)$
+    %                 [.$S(b)$
+    %                     [.$\neg S(b)$ ]
+    %                     [.$\neg Q(b)$ ]
+    %                 ]
+    %                 [.$\neg Q(b)$ ]
+    %             ] 
+    %         ]
+    %         \end{tikzpicture}
+    %         \end{figure}
+    % \end{columns}
     % }
+    \only<1>{
+        \begin{figure}
+        \includegraphics[width=\linewidth]{tableaux.png}
+        \caption{The search tree of a tableau based TP}
+        \end{figure}
+    }
 
     % \begin{figure}
     % \includegraphics[width=\linewidth]{tableaux.png}
@@ -379,7 +379,7 @@ presented by}\\\textit{Dobrik Georgiev}}
                 \item $0.99^{proof\ depth}$ otherwise
             \end{itemize}
         \item<4-> Apply regression on the logits to learn prior probability and value
-        \item<4-> \textbf{Deduce}, \textbf{Learn} from it, and \textbf{Loop}
+        \item<4-> \textbf{Deduce}, \textbf{Learn} from it, and \textbf{Loop} \citep{MaLARea}
     \end{itemize}
 \end{frame}
 

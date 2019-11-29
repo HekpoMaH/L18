@@ -1,4 +1,4 @@
-\beamer@sectionintoc {1}{How tableau provers work}{3}{0}{1}
+\beamer@sectionintoc {1}{How tableau provers search}{3}{0}{1}
 \beamer@sectionintoc {2}{Reinforcement Learning and Application to TP}{5}{0}{2}
 \beamer@subsectionintoc {2}{1}{Basics}{7}{0}{2}
 \beamer@subsectionintoc {2}{2}{Application to TP}{7}{0}{2}
